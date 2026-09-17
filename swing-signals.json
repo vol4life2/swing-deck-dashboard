@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T20:39:03.506Z",
+  "updated_at": "2026-09-17T22:27:53.452Z",
   "bullish_candidates": [
     {
       "symbol": "AI",
@@ -356,7 +356,7 @@
       "implied_move_30d": null,
       "strikes_label": "35/43",
       "expiration": "2026-10-16",
-      "dte": 29,
+      "dte": 28.9,
       "reasoning": "IV Rank 31 < threshold 50 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -369,10 +369,10 @@
       "iv_level_pct": 72.6,
       "iv_rank_reliable": true,
       "trading_days_available": 275,
-      "implied_move_30d": 27.46,
+      "implied_move_30d": 27.52,
       "strikes_label": "120/130",
       "expiration": "2026-10-16",
-      "dte": 29,
+      "dte": 28.9,
       "reasoning": "IV Rank 48 < threshold 50 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -388,7 +388,7 @@
       "implied_move_30d": null,
       "strikes_label": "170/180",
       "expiration": "2026-10-16",
-      "dte": 29,
+      "dte": 28.9,
       "reasoning": "IV Rank 3 < threshold 50 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -401,10 +401,10 @@
       "iv_level_pct": 24.2,
       "iv_rank_reliable": true,
       "trading_days_available": 275,
-      "implied_move_30d": 7.41,
+      "implied_move_30d": 7.42,
       "strikes_label": "95/105",
       "expiration": "2026-10-16",
-      "dte": 29,
+      "dte": 28.9,
       "reasoning": "IV Rank 9 < threshold 50 - buying premium is relatively cheap (long put vertical)"
     }
   ],
@@ -412,24 +412,24 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 337,
-      "pl_dollar": 13.2,
-      "pl_pct": 1.323,
+      "current_price": 336.3,
+      "pl_dollar": 11.1,
+      "pl_pct": 1.1119999999999999,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
       "days_held": 6,
-      "stop_price": 313.88,
+      "stop_price": 315.9,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 7.365872307888366
+      "pct_above_stop": 6.457739791073136
     },
     {
       "kind": "shares",
       "symbol": "MDT",
-      "current_price": 92.44,
-      "pl_dollar": -11.899998,
-      "pl_pct": -0.7100000000000001,
+      "current_price": 93.5,
+      "pl_dollar": 7.180002,
+      "pl_pct": 0.428,
       "qty": 18,
       "entry_price": 93.10111111111111,
       "opened_date": "Sep 15",
@@ -437,14 +437,14 @@
       "stop_price": 89.01,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 3.853499606785746
+      "pct_above_stop": 5.044377036288052
     },
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.34,
-      "pl_dollar": -22.56,
-      "pl_pct": -2.268,
+      "current_price": 10.3112,
+      "pl_dollar": -25.2672,
+      "pl_pct": -2.541,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
@@ -452,7 +452,7 @@
       "stop_price": 9.98,
       "phase": 5,
       "phase_label": "pullback",
-      "pct_above_stop": 3.6072144288577093
+      "pct_above_stop": 3.318637274549088
     },
     {
       "kind": "shares",
@@ -472,22 +472,22 @@
     {
       "kind": "shares",
       "symbol": "MDLZ",
-      "current_price": 62.04,
-      "pl_dollar": 1.05,
-      "pl_pct": 0.11299999999999999,
+      "current_price": 61.98,
+      "pl_dollar": 0.15,
+      "pl_pct": 0.016,
       "qty": 15,
       "entry_price": 61.97,
       "opened_date": "Sep 17",
       "days_held": 0,
-      "stop_price": 61.68,
+      "stop_price": null,
       "phase": 1,
       "phase_label": "downtrend",
-      "pct_above_stop": 0.5836575875486372
+      "pct_above_stop": null
     },
     {
       "kind": "options",
       "symbol": "GOOG",
-      "current_price": 343.069,
+      "current_price": 342.804,
       "pl_dollar": 11,
       "pl_pct": 4.583333333333333,
       "position_label": "Put credit spread 315/325",
@@ -504,7 +504,7 @@
     {
       "kind": "options",
       "symbol": "KO",
-      "current_price": 88,
+      "current_price": 87.9825,
       "pl_dollar": -21,
       "pl_pct": -15,
       "position_label": "Long put vertical 77.5/87.5",
