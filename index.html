@@ -309,6 +309,13 @@
     return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
+  // IV Rank is a 0-100 ordinal figure, not a literal percentage of anything (unlike
+  // absolute IV level, which genuinely is one) - shown as a bare rounded whole
+  // number everywhere on this page, 2026-09-17 per explicit instruction.
+  function ivRankDisplay(pct) {
+    return pct != null ? String(Math.round(pct)) : '—';
+  }
+
   function freshPill(c) {
     if (c.phase === 2) return { cls: 'fresh', label: 'Fresh' };
     if (c.phase === 3) return c.fresh_breakout ? { cls: 'fresh', label: 'Fresh' } : { cls: 'established', label: 'Established' };
@@ -331,7 +338,10 @@
           </div>
           ${pill(c)}
         </div>
-        <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
+        <div class="meta-grid" style="grid-template-columns: 2fr 1fr;">
+          <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
+        </div>
         <div class="meta-grid">
           <div class="meta-item"><div class="k">EMA 10</div><div class="v mono">${c.ema10.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
@@ -368,11 +378,12 @@
       // make the rank misleading in either direction - flagged, not hidden, per the
       // user's own instruction: still show the candidate, just disclose it and show
       // the absolute IV level too (real signal even when the rank isn't trustworthy).
+      const move = c.implied_move_30d;
       const ivRow = `
         <div class="meta-grid">
-          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono" style="${reliable ? '' : `color: var(--amber)`}">${c.iv_rank_pct.toFixed(1)}%${reliable ? '' : ' ⚠'}</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono" style="${reliable ? '' : `color: var(--amber)`}">${ivRankDisplay(c.iv_rank_pct)}${reliable ? '' : ' ⚠'}</div></div>
           <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${c.iv_level_pct != null ? c.iv_level_pct.toFixed(1) + '%' : '—'}</div></div>
-          <div class="meta-item"><div class="k">History</div><div class="v mono">${c.trading_days_available}d</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${move != null ? '±$' + move.toFixed(2) : '—'}</div></div>
         </div>`;
       return `
       <div class="card bearish">
@@ -446,7 +457,7 @@
           <div class="meta-item"><div class="k">Position</div><div class="v mono">${esc(pos.position_label)}</div></div>
           <div class="meta-item"><div class="k">Opened</div><div class="v">${esc(pos.opened_date)} (${pos.days_held}d)</div></div>
           <div class="meta-item"><div class="k">Expires</div><div class="v">${fmtMonthDay(pos.expiration)} (${pos.dte} DTE)</div></div>
-          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${pos.iv_rank_pct != null ? pos.iv_rank_pct.toFixed(1) + '%' : '—'}</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(pos.iv_rank_pct)}</div></div>
           <div class="meta-item"><div class="k">Mark</div><div class="v mono">$${pos.mark.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Trade price</div><div class="v mono">$${pos.trade_price.toFixed(2)}</div></div>
         </div>
