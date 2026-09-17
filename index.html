@@ -161,9 +161,6 @@
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  @media (min-width: 640px) {
-    .cards.two-col { grid-template-columns: 1fr 1fr; }
-  }
 
   .card {
     background: var(--surface);
@@ -175,6 +172,7 @@
     gap: 10px;
   }
   .card.bullish { border-top: 3px solid var(--bull); }
+  .card.pullback { border-top: 3px solid var(--bull); }
   .card.bearish { border-top: 3px solid var(--bear); }
   .card.open { border-top: 3px solid var(--info); }
 
@@ -272,6 +270,14 @@
 
 <section>
   <div class="section-head">
+    <div class="section-title bullish"><span class="dot"></span>Pullback candidates</div>
+    <div class="section-count">Support test within a confirmed uptrend</div>
+  </div>
+  <div id="pullback-cards"></div>
+</section>
+
+<section>
+  <div class="section-head">
     <div class="section-title bearish"><span class="dot"></span>Bearish candidates</div>
     <div class="section-count">Phase 4/1 transition today · structure by IV Rank</div>
   </div>
@@ -329,7 +335,7 @@
       return;
     }
     const pill = c => { const p = freshPill(c); return `<div class="pill ${p.cls}">${p.label}</div>`; };
-    el.innerHTML = `<div class="cards two-col">${candidates.map(c => `
+    el.innerHTML = `<div class="cards">${candidates.map(c => `
       <div class="card bullish">
         <div class="card-head">
           <div class="symbol-block">
@@ -347,6 +353,35 @@
           <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
         </div>
+        ${c.reasoning ? `<div class="structure-line"><div class="label">Why it's showing</div><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
+      </div>`).join('')}</div>`;
+  }
+
+  function renderPullback(candidates) {
+    const el = document.getElementById('pullback-cards');
+    if (candidates.length === 0) {
+      el.innerHTML = '<div class="empty-note">No fresh support tests within a confirmed uptrend today.</div>';
+      return;
+    }
+    el.innerHTML = `<div class="cards">${candidates.map(c => `
+      <div class="card pullback">
+        <div class="card-head">
+          <div class="symbol-block">
+            <div class="symbol">${esc(c.symbol)}</div>
+            <div class="price mono">$${c.close.toFixed(2)}</div>
+          </div>
+          <div class="pill fresh">At support</div>
+        </div>
+        <div class="meta-grid" style="grid-template-columns: 2fr 1fr;">
+          <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="k">Support (10d low)</div><div class="v mono">${c.support_level.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">200d SMA</div><div class="v mono">${c.long_sma_value.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
+        </div>
+        ${c.reasoning ? `<div class="structure-line"><div class="label">Why it's showing</div><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
       </div>`).join('')}</div>`;
   }
 
@@ -483,9 +518,11 @@
   function renderAll(doc) {
     if (!doc) return;
     document.getElementById('updated-at').textContent = fmtTime(doc.updated_at);
+    const pullbackCandidates = doc.pullback_candidates || [];
     document.getElementById('counts-summary').textContent =
-      `${doc.bullish_candidates.length} bullish · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
+      `${doc.bullish_candidates.length} bullish · ${pullbackCandidates.length} pullback · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
     renderBullish(doc.bullish_candidates);
+    renderPullback(pullbackCandidates);
     renderBearish(doc.bearish_candidates);
     renderOpenPositions(doc.open_positions);
 
