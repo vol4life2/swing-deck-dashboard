@@ -362,6 +362,18 @@
     el.innerHTML = `<div class="cards">${candidates.map(c => {
       const pillCls = c.phase === 4 ? 'fresh' : 'established';
       const { label, detail } = bearishStructureLine(c);
+      const reliable = c.iv_rank_reliable !== false;
+      // A stock with materially short trading history (e.g. a recent IPO, like SPCX)
+      // truncates IV Rank/Percentile's intended 252-trading-day lookback, which can
+      // make the rank misleading in either direction - flagged, not hidden, per the
+      // user's own instruction: still show the candidate, just disclose it and show
+      // the absolute IV level too (real signal even when the rank isn't trustworthy).
+      const ivRow = `
+        <div class="meta-grid">
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono" style="${reliable ? '' : `color: var(--amber)`}">${c.iv_rank_pct.toFixed(1)}%${reliable ? '' : ' ⚠'}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${c.iv_level_pct != null ? c.iv_level_pct.toFixed(1) + '%' : '—'}</div></div>
+          <div class="meta-item"><div class="k">History</div><div class="v mono">${c.trading_days_available}d</div></div>
+        </div>`;
       return `
       <div class="card bearish">
         <div class="card-head">
@@ -371,6 +383,8 @@
           </div>
           <div class="pill ${pillCls}">Phase ${c.phase} · ${esc(c.phase_label)}</div>
         </div>
+        ${ivRow}
+        ${!reliable ? `<div class="structure-line"><div class="label" style="color: var(--amber)">⚠ IV Rank may be unreliable</div><div class="detail">Only ${c.trading_days_available} trading days of history (needs ~200) - this stock likely IPO'd recently, so the rank's 252-day lookback is truncated. The absolute IV level above is more trustworthy than the rank here.</div></div>` : ''}
         <div class="structure-line">
           <div class="label">${label}</div>
           <div class="detail">${detail}</div>
