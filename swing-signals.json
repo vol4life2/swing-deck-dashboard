@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T10:17:16.767Z",
+  "updated_at": "2026-09-17T10:31:12.822Z",
   "bullish_candidates": [
     {
       "symbol": "CBRS",
@@ -132,9 +132,9 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 334.2,
-      "pl_dollar": 4.8,
-      "pl_pct": 0.481,
+      "current_price": 334.21,
+      "pl_dollar": 4.83,
+      "pl_pct": 0.484,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
@@ -142,7 +142,7 @@
       "stop_price": 313.88,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 6.473811647763475
+      "pct_above_stop": 6.476997578692489
     },
     {
       "kind": "shares",
@@ -162,9 +162,9 @@
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.37,
-      "pl_dollar": -19.74,
-      "pl_pct": -1.9849999999999999,
+      "current_price": 10.38,
+      "pl_dollar": -18.8,
+      "pl_pct": -1.8900000000000001,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
@@ -172,12 +172,12 @@
       "stop_price": 9.98,
       "phase": 5,
       "phase_label": "pullback",
-      "pct_above_stop": 3.907815631262513
+      "pct_above_stop": 4.008016032064131
     },
     {
       "kind": "options",
       "symbol": "GOOG",
-      "current_price": 343.82,
+      "current_price": 343.5,
       "pl_dollar": -33,
       "pl_pct": -13.750000000000002,
       "position_label": "Put credit spread 315/325",
