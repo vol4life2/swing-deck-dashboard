@@ -1,0 +1,195 @@
+{
+  "updated_at": "2026-09-17T10:17:16.767Z",
+  "bullish_candidates": [
+    {
+      "symbol": "CBRS",
+      "close": 190.3,
+      "phase": 2,
+      "phase_label": "early reversal",
+      "fresh_breakout": null,
+      "ema10": 190.09,
+      "sma30": 203.87,
+      "suggested_stop": 165.6
+    },
+    {
+      "symbol": "GILD",
+      "close": 147.71,
+      "phase": 3,
+      "phase_label": "uptrend",
+      "fresh_breakout": false,
+      "ema10": 146.64,
+      "sma30": 143.46,
+      "suggested_stop": 140.13
+    },
+    {
+      "symbol": "LMT",
+      "close": 537.32,
+      "phase": 2,
+      "phase_label": "early reversal",
+      "fresh_breakout": null,
+      "ema10": 535.86,
+      "sma30": 563.81,
+      "suggested_stop": 511.43
+    },
+    {
+      "symbol": "MDLZ",
+      "close": 62.38,
+      "phase": 2,
+      "phase_label": "early reversal",
+      "fresh_breakout": null,
+      "ema10": 62.27,
+      "sma30": 62.61,
+      "suggested_stop": 59.27
+    }
+  ],
+  "bearish_candidates": [
+    {
+      "symbol": "CSCO",
+      "close": 107.72,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 33.6,
+      "strikes_label": "98/108",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 33.6% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "INTC",
+      "close": 101.02,
+      "phase": 4,
+      "phase_label": "rollover warning",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 29.5,
+      "strikes_label": "93/103",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 29.5% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "MSFT",
+      "close": 490.45,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 24.9,
+      "strikes_label": "480/490",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 24.9% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "QMCO",
+      "close": 23.86,
+      "phase": 4,
+      "phase_label": "rollover warning",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 1.4,
+      "strikes_label": "20/22.5",
+      "expiration": "2026-10-16",
+      "dte": 29.4,
+      "reasoning": "IV Rank 1.4% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "SNDK",
+      "close": 1520.14,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 8,
+      "strikes_label": "1535/1545",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 8.0% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "SPCX",
+      "close": 150.93,
+      "phase": 4,
+      "phase_label": "rollover warning",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 5.5,
+      "strikes_label": "142/152.5",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 5.5% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "V",
+      "close": 370.98,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 26.1,
+      "strikes_label": "360/370",
+      "expiration": "2026-10-30",
+      "dte": 43.4,
+      "reasoning": "IV Rank 26.1% < threshold 50% - buying premium is relatively cheap (long put vertical)"
+    }
+  ],
+  "open_positions": [
+    {
+      "kind": "shares",
+      "symbol": "AAPL",
+      "current_price": 334.2,
+      "pl_dollar": 4.8,
+      "pl_pct": 0.481,
+      "qty": 3,
+      "entry_price": 332.6,
+      "opened_date": "Sep 11",
+      "days_held": 6,
+      "stop_price": 313.88,
+      "phase": 3,
+      "phase_label": "uptrend",
+      "pct_above_stop": 6.473811647763475
+    },
+    {
+      "kind": "shares",
+      "symbol": "MDT",
+      "current_price": 92.86,
+      "pl_dollar": -4.339998,
+      "pl_pct": -0.259,
+      "qty": 18,
+      "entry_price": 93.10111111111111,
+      "opened_date": "Sep 15",
+      "days_held": 2,
+      "stop_price": 89.01,
+      "phase": 3,
+      "phase_label": "uptrend",
+      "pct_above_stop": 4.325356701494208
+    },
+    {
+      "kind": "shares",
+      "symbol": "UNG",
+      "current_price": 10.37,
+      "pl_dollar": -19.74,
+      "pl_pct": -1.9849999999999999,
+      "qty": 94,
+      "entry_price": 10.58,
+      "opened_date": "Sep 15",
+      "days_held": 2,
+      "stop_price": 9.98,
+      "phase": 5,
+      "phase_label": "pullback",
+      "pct_above_stop": 3.907815631262513
+    },
+    {
+      "kind": "options",
+      "symbol": "GOOG",
+      "current_price": 343.82,
+      "pl_dollar": -33,
+      "pl_pct": -13.750000000000002,
+      "position_label": "Put credit spread 315/325",
+      "opened_date": "Sep 11",
+      "days_held": 6,
+      "expiration": "2026-10-16",
+      "dte": 29,
+      "iv_rank_pct": 25.633383,
+      "mark": 2.73,
+      "trade_price": 2.4,
+      "profit_target_pct": 50,
+      "target_detail": "Needs to drop to $1.20/spread to hit target - currently $2.73, moved away from target rather than toward it."
+    }
+  ]
+}

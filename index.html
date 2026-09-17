@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swing Deck</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #f4f2ed;
+    --surface: #ffffff;
+    --surface-2: #ebe8e1;
+    --ink: #1b1c1f;
+    --ink-dim: #6b6c70;
+    --line: #ddd9d0;
+    --bull: #2f8f61;
+    --bull-soft: #dcf0e5;
+    --bear: #c14a5f;
+    --bear-soft: #f6dfe3;
+    --info: #4a6fa1;
+    --info-soft: #e1e9f3;
+    --neutral: #9a978f;
+    --neutral-soft: #eae7de;
+    --amber: #b9791e;
+    --amber-soft: #f3e6ce;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #12141a;
+      --surface: #191c24;
+      --surface-2: #20232c;
+      --ink: #eeeef0;
+      --ink-dim: #8d90a0;
+      --line: #2c2f3a;
+      --bull: #4caf82;
+      --bull-soft: #1c3327;
+      --bear: #e0637a;
+      --bear-soft: #3a2028;
+      --info: #7fa3d6;
+      --info-soft: #1e2c3d;
+      --neutral: #6b6e7a;
+      --neutral-soft: #23252d;
+      --amber: #e8b054;
+      --amber-soft: #3a2f1a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #12141a;
+    --surface: #191c24;
+    --surface-2: #20232c;
+    --ink: #eeeef0;
+    --ink-dim: #8d90a0;
+    --line: #2c2f3a;
+    --bull: #4caf82;
+    --bull-soft: #1c3327;
+    --bear: #e0637a;
+    --bear-soft: #3a2028;
+    --info: #7fa3d6;
+    --info-soft: #1e2c3d;
+    --neutral: #6b6e7a;
+    --neutral-soft: #23252d;
+    --amber: #e8b054;
+    --amber-soft: #3a2f1a;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 20px 16px 48px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .subline {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .subline strong { color: var(--ink); font-weight: 600; }
+  .preview-note {
+    font-size: 0.72rem;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 2px;
+  }
+  .stale-banner {
+    display: none;
+    font-size: 0.74rem;
+    color: var(--bear);
+    background: var(--bear-soft);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 2px;
+  }
+  .stale-banner.show { display: block; }
+
+  section { margin-bottom: 32px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .section-title.bullish .dot { background: var(--bull); }
+  .section-title.bearish .dot { background: var(--bear); }
+  .section-title.open .dot { background: var(--info); }
+  .section-count {
+    font-size: 0.72rem;
+    color: var(--ink-dim);
+  }
+  .empty-note {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 640px) {
+    .cards.two-col { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card.bullish { border-top: 3px solid var(--bull); }
+  .card.bearish { border-top: 3px solid var(--bear); }
+  .card.open { border-top: 3px solid var(--info); }
+
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .symbol-block { display: flex; flex-direction: column; gap: 2px; }
+  .symbol {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+  }
+  .pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 4px 9px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .pill.bull { background: var(--bull-soft); color: var(--bull); }
+  .pill.bear { background: var(--bear-soft); color: var(--bear); }
+  .pill.fresh { background: var(--amber-soft); color: var(--amber); }
+  .pill.established { background: var(--neutral-soft); color: var(--ink-dim); }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 6px;
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-item .k {
+    font-size: 0.63rem;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .meta-item .v { font-size: 0.82rem; font-weight: 500; }
+
+  .structure-line {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .structure-line .label { font-weight: 600; color: var(--ink); }
+  .structure-line .detail { color: var(--ink-dim); font-size: 0.74rem; }
+
+  .pl-value { font-weight: 600; text-align: right; }
+  .pl-value.pos { color: var(--bull); }
+  .pl-value.neg { color: var(--bear); }
+  .pl-pct { font-size: 0.76rem; font-weight: 500; } /* inherits pos/neg color from the parent .pl-value */
+
+  footer {
+    font-size: 0.72rem;
+    color: var(--ink-dim);
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <h1>Swing Deck</h1>
+  </div>
+  <div class="subline">
+    <span>Last check: <strong id="updated-at">—</strong></span>
+    <span id="counts-summary">—</span>
+  </div>
+  <div class="preview-note">Read-only · candidates from the phase classifier + IV Rank, positions from Alpaca paper + a separate live account · no orders are ever placed from this page.</div>
+  <div class="stale-banner" id="stale-banner">Data is over 30 hours old — the daily refresh may have missed its run.</div>
+</header>
+
+<section>
+  <div class="section-head">
+    <div class="section-title bullish"><span class="dot"></span>Bullish candidates</div>
+    <div class="section-count">Phase 2/3 transition today</div>
+  </div>
+  <div id="bullish-cards"></div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-title bearish"><span class="dot"></span>Bearish candidates</div>
+    <div class="section-count">Phase 4/1 transition today · structure by IV Rank</div>
+  </div>
+  <div id="bearish-cards"></div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-title open"><span class="dot"></span>Open positions</div>
+    <div class="section-count" id="open-count">—</div>
+  </div>
+  <div id="open-cards"></div>
+</section>
+
+<footer>
+  Read-only · daily refresh ~10am ET, after the open settles · not connected to any order placement
+</footer>
+
+<script>
+  function fmtMoney(n) {
+    const sign = n < 0 ? '-' : '';
+    return `${sign}$${Math.abs(n).toFixed(2)}`;
+  }
+  function fmtMonthDay(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  }
+  function fmtTime(iso) {
+    if (!iso) return '—';
+    return new Date(iso).toLocaleString('en-US', {
+      timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit',
+    }) + ' ET';
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function freshPill(c) {
+    if (c.phase === 2) return { cls: 'fresh', label: 'Fresh' };
+    if (c.phase === 3) return c.fresh_breakout ? { cls: 'fresh', label: 'Fresh' } : { cls: 'established', label: 'Established' };
+    return { cls: 'established', label: 'Established' };
+  }
+
+  function renderBullish(candidates) {
+    const el = document.getElementById('bullish-cards');
+    if (candidates.length === 0) {
+      el.innerHTML = '<div class="empty-note">No Phase 2/3 transitions today.</div>';
+      return;
+    }
+    const pill = c => { const p = freshPill(c); return `<div class="pill ${p.cls}">${p.label}</div>`; };
+    el.innerHTML = `<div class="cards two-col">${candidates.map(c => `
+      <div class="card bullish">
+        <div class="card-head">
+          <div class="symbol-block">
+            <div class="symbol">${esc(c.symbol)}</div>
+            <div class="price mono">$${c.close.toFixed(2)}</div>
+          </div>
+          ${pill(c)}
+        </div>
+        <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="k">EMA 10</div><div class="v mono">${c.ema10.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
+        </div>
+      </div>`).join('')}</div>`;
+  }
+
+  function bearishStructureLine(c) {
+    const structureName = c.structure === 'short_call_vertical' ? 'Short call vertical' : 'Long put vertical';
+    let label = `${structureName} (structure not yet selected)`;
+    if (c.strikes_label) {
+      const [lo, hi] = c.strikes_label.split('/');
+      const dteRounded = Math.round(c.dte);
+      label = c.structure === 'short_call_vertical'
+        ? `${structureName} — sell ${lo}C / buy ${hi}C, exp ${c.expiration} (${dteRounded} DTE)`
+        : `${structureName} — buy ${hi}P / sell ${lo}P, exp ${c.expiration} (${dteRounded} DTE)`;
+    }
+    return { label, detail: esc(c.reasoning) };
+  }
+
+  function renderBearish(candidates) {
+    const el = document.getElementById('bearish-cards');
+    if (candidates.length === 0) {
+      el.innerHTML = '<div class="empty-note">No Phase 4/1 transitions today.</div>';
+      return;
+    }
+    el.innerHTML = `<div class="cards">${candidates.map(c => {
+      const pillCls = c.phase === 4 ? 'fresh' : 'established';
+      const { label, detail } = bearishStructureLine(c);
+      return `
+      <div class="card bearish">
+        <div class="card-head">
+          <div class="symbol-block">
+            <div class="symbol">${esc(c.symbol)}</div>
+            <div class="price mono">$${c.close.toFixed(2)}</div>
+          </div>
+          <div class="pill ${pillCls}">Phase ${c.phase} · ${esc(c.phase_label)}</div>
+        </div>
+        <div class="structure-line">
+          <div class="label">${label}</div>
+          <div class="detail">${detail}</div>
+        </div>
+      </div>`;
+    }).join('')}</div>`;
+  }
+
+  function shareDetail(pos) {
+    if (pos.phase === 1 || pos.phase === 4) {
+      return `Phase ${pos.phase} normally triggers a same-day exit — worth checking this position directly if it's still open.`;
+    }
+    if (pos.pct_above_stop == null) return 'No resting stop found for this position.';
+    const dir = pos.pct_above_stop >= 0 ? 'above' : 'below';
+    const pctStr = `${Math.abs(pos.pct_above_stop).toFixed(1)}% ${dir} the $${pos.stop_price.toFixed(2)} stop`;
+    if (pos.phase === 3) return `Trend intact — ${pctStr}.`;
+    if (pos.phase === 2) return `Early reversal — ${pctStr}.`;
+    if (pos.phase === 5) return `Below the 10-day EMA but still above the 30-day SMA and stop — watch for a Phase 4/1 transition.`;
+    return pctStr;
+  }
+
+  function renderShareCard(pos) {
+    const plCls = pos.pl_dollar >= 0 ? 'pos' : 'neg';
+    const phaseLine = pos.phase != null ? `Phase ${pos.phase} · ${esc(pos.phase_label)}` : 'Phase unavailable';
+    return `
+      <div class="card open">
+        <div class="card-head">
+          <div class="symbol-block">
+            <div class="symbol">${esc(pos.symbol)}</div>
+            <div class="price mono">$${pos.current_price.toFixed(2)}</div>
+          </div>
+          <div class="pl-value ${plCls} mono">${fmtMoney(pos.pl_dollar)} <span class="pl-pct">(${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%)</span></div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="k">Position</div><div class="v mono">${pos.qty} sh @ $${pos.entry_price.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">Opened</div><div class="v">${esc(pos.opened_date)} (${pos.days_held}d)</div></div>
+          <div class="meta-item"><div class="k">Stop</div><div class="v mono">${pos.stop_price != null ? '$' + pos.stop_price.toFixed(2) : '—'}</div></div>
+        </div>
+        <div class="structure-line">
+          <div class="label">${phaseLine}</div>
+          <div class="detail">${shareDetail(pos)}</div>
+        </div>
+      </div>`;
+  }
+
+  function renderOptionsCard(pos) {
+    const plCls = pos.pl_dollar >= 0 ? 'pos' : 'neg';
+    const isDebit = pos.position_label.startsWith('Long');
+    return `
+      <div class="card open">
+        <div class="card-head">
+          <div class="symbol-block">
+            <div class="symbol">${esc(pos.symbol)}</div>
+            <div class="price mono">${pos.current_price != null ? '$' + pos.current_price.toFixed(2) : '—'}</div>
+          </div>
+          <div class="pl-value ${plCls} mono">${fmtMoney(pos.pl_dollar)}${pos.pl_pct != null ? ` <span class="pl-pct">(${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(1)}%)</span>` : ''}</div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="k">Position</div><div class="v mono">${esc(pos.position_label)}</div></div>
+          <div class="meta-item"><div class="k">Opened</div><div class="v">${esc(pos.opened_date)} (${pos.days_held}d)</div></div>
+          <div class="meta-item"><div class="k">Expires</div><div class="v">${fmtMonthDay(pos.expiration)} (${pos.dte} DTE)</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${pos.iv_rank_pct != null ? pos.iv_rank_pct.toFixed(1) + '%' : '—'}</div></div>
+          <div class="meta-item"><div class="k">Mark</div><div class="v mono">$${pos.mark.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">Trade price</div><div class="v mono">$${pos.trade_price.toFixed(2)}</div></div>
+        </div>
+        ${pos.target_detail ? `
+        <div class="structure-line">
+          <div class="label">Profit target: ${pos.profit_target_pct}% of ${isDebit ? 'debit' : 'credit'}</div>
+          <div class="detail">${esc(pos.target_detail)}</div>
+        </div>` : ''}
+      </div>`;
+  }
+
+  function renderOpenPositions(positions) {
+    const el = document.getElementById('open-cards');
+    const netPl = positions.reduce((sum, p) => sum + p.pl_dollar, 0);
+    document.getElementById('open-count').textContent = `${positions.length} open · net ${fmtMoney(netPl)}`;
+    if (positions.length === 0) {
+      el.innerHTML = '<div class="empty-note">Nothing open right now.</div>';
+      return;
+    }
+    el.innerHTML = `<div class="cards">${positions.map(p => p.kind === 'options' ? renderOptionsCard(p) : renderShareCard(p)).join('')}</div>`;
+  }
+
+  function renderAll(doc) {
+    if (!doc) return;
+    document.getElementById('updated-at').textContent = fmtTime(doc.updated_at);
+    document.getElementById('counts-summary').textContent =
+      `${doc.bullish_candidates.length} bullish · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
+    renderBullish(doc.bullish_candidates);
+    renderBearish(doc.bearish_candidates);
+    renderOpenPositions(doc.open_positions);
+
+    const staleBanner = document.getElementById('stale-banner');
+    const ageHours = doc.updated_at ? (Date.now() - new Date(doc.updated_at).getTime()) / 3600000 : Infinity;
+    staleBanner.className = 'stale-banner' + (ageHours > 30 ? ' show' : '');
+  }
+
+  // Plain same-origin fetch of the JSON a GitHub Actions workflow in the tradingBot
+  // repo commits here once daily (~10am ET) - see generate_swing_snapshot.mjs. No
+  // claude.ai runtime involved, same laptop/session-independent design as Signal
+  // Deck. Polls occasionally so a tab left open overnight picks up the next day's
+  // refresh without a manual reload - daily-cadence data doesn't need Signal Deck's
+  // 60s interval, so this uses a much longer one.
+  async function fetchAndRender() {
+    try {
+      const res = await fetch('./swing-signals.json', { cache: 'no-store' });
+      if (!res.ok) return;
+      renderAll(await res.json());
+    } catch (e) {
+      // keep showing the last successful render rather than blanking the page
+    }
+  }
+
+  fetchAndRender();
+  setInterval(fetchAndRender, 15 * 60 * 1000);
+</script>
+</body>
+</html>
