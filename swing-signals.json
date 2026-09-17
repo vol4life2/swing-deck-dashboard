@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T20:34:31.776Z",
+  "updated_at": "2026-09-17T20:39:03.506Z",
   "bullish_candidates": [
     {
       "symbol": "AI",
@@ -412,9 +412,9 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 336.78,
-      "pl_dollar": 12.54,
-      "pl_pct": 1.257,
+      "current_price": 337,
+      "pl_dollar": 13.2,
+      "pl_pct": 1.323,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
@@ -422,7 +422,7 @@
       "stop_price": 313.88,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 7.295781827449973
+      "pct_above_stop": 7.365872307888366
     },
     {
       "kind": "shares",
@@ -442,9 +442,9 @@
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.33,
-      "pl_dollar": -23.5,
-      "pl_pct": -2.363,
+      "current_price": 10.34,
+      "pl_dollar": -22.56,
+      "pl_pct": -2.268,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
@@ -452,7 +452,7 @@
       "stop_price": 9.98,
       "phase": 5,
       "phase_label": "pullback",
-      "pct_above_stop": 3.507014028056109
+      "pct_above_stop": 3.6072144288577093
     },
     {
       "kind": "shares",
@@ -472,9 +472,9 @@
     {
       "kind": "shares",
       "symbol": "MDLZ",
-      "current_price": 62.12,
-      "pl_dollar": 2.25,
-      "pl_pct": 0.242,
+      "current_price": 62.04,
+      "pl_dollar": 1.05,
+      "pl_pct": 0.11299999999999999,
       "qty": 15,
       "entry_price": 61.97,
       "opened_date": "Sep 17",
@@ -482,12 +482,12 @@
       "stop_price": 61.68,
       "phase": 1,
       "phase_label": "downtrend",
-      "pct_above_stop": 0.7133592736705541
+      "pct_above_stop": 0.5836575875486372
     },
     {
       "kind": "options",
       "symbol": "GOOG",
-      "current_price": 342.96,
+      "current_price": 343.069,
       "pl_dollar": 11,
       "pl_pct": 4.583333333333333,
       "position_label": "Put credit spread 315/325",
@@ -504,7 +504,7 @@
     {
       "kind": "options",
       "symbol": "KO",
-      "current_price": 88.1687,
+      "current_price": 88,
       "pl_dollar": -21,
       "pl_pct": -15,
       "position_label": "Long put vertical 77.5/87.5",
