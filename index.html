@@ -263,17 +263,9 @@
 <section>
   <div class="section-head">
     <div class="section-title bullish"><span class="dot"></span>Bullish candidates</div>
-    <div class="section-count">Phase 2/3 transition today</div>
+    <div class="section-count">Phase 2/3 transition, or a support pullback in an uptrend</div>
   </div>
   <div id="bullish-cards"></div>
-</section>
-
-<section>
-  <div class="section-head">
-    <div class="section-title bullish"><span class="dot"></span>Pullback candidates</div>
-    <div class="section-count">Support test within a confirmed uptrend</div>
-  </div>
-  <div id="pullback-cards"></div>
 </section>
 
 <section>
@@ -328,21 +320,16 @@
     return { cls: 'established', label: 'Established' };
   }
 
-  function renderBullish(candidates) {
-    const el = document.getElementById('bullish-cards');
-    if (candidates.length === 0) {
-      el.innerHTML = '<div class="empty-note">No Phase 2/3 transitions today.</div>';
-      return;
-    }
-    const pill = c => { const p = freshPill(c); return `<div class="pill ${p.cls}">${p.label}</div>`; };
-    el.innerHTML = `<div class="cards">${candidates.map(c => `
+  function phaseTransitionCardHtml(c) {
+    const p = freshPill(c);
+    return `
       <div class="card bullish">
         <div class="card-head">
           <div class="symbol-block">
             <div class="symbol">${esc(c.symbol)}</div>
             <div class="price mono">$${c.close.toFixed(2)}</div>
           </div>
-          ${pill(c)}
+          <div class="pill ${p.cls}">${p.label}</div>
         </div>
         <div class="meta-grid" style="grid-template-columns: 2fr 1fr;">
           <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
@@ -353,17 +340,12 @@
           <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
         </div>
-        ${c.reasoning ? `<div class="structure-line"><div class="label">Why it's showing</div><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
-      </div>`).join('')}</div>`;
+        ${c.reasoning ? `<div class="structure-line"><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
+      </div>`;
   }
 
-  function renderPullback(candidates) {
-    const el = document.getElementById('pullback-cards');
-    if (candidates.length === 0) {
-      el.innerHTML = '<div class="empty-note">No fresh support tests within a confirmed uptrend today.</div>';
-      return;
-    }
-    el.innerHTML = `<div class="cards">${candidates.map(c => `
+  function pullbackCardHtml(c) {
+    return `
       <div class="card pullback">
         <div class="card-head">
           <div class="symbol-block">
@@ -381,8 +363,21 @@
           <div class="meta-item"><div class="k">200d SMA</div><div class="v mono">${c.long_sma_value.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
         </div>
-        ${c.reasoning ? `<div class="structure-line"><div class="label">Why it's showing</div><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
-      </div>`).join('')}</div>`;
+        ${c.reasoning ? `<div class="structure-line"><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
+      </div>`;
+  }
+
+  // One shared section for both bullish triggers (phase transition + support
+  // pullback) - merged 2026-09-17 per the user: the pill and reasoning bubble already
+  // distinguish them, a separate section was redundant.
+  function renderBullish(phaseCandidates, pullbackCandidates) {
+    const el = document.getElementById('bullish-cards');
+    if (phaseCandidates.length === 0 && pullbackCandidates.length === 0) {
+      el.innerHTML = '<div class="empty-note">No Phase 2/3 transitions or support pullbacks today.</div>';
+      return;
+    }
+    const cards = [...phaseCandidates.map(phaseTransitionCardHtml), ...pullbackCandidates.map(pullbackCardHtml)];
+    el.innerHTML = `<div class="cards">${cards.join('')}</div>`;
   }
 
   function bearishStructureLine(c) {
@@ -520,9 +515,8 @@
     document.getElementById('updated-at').textContent = fmtTime(doc.updated_at);
     const pullbackCandidates = doc.pullback_candidates || [];
     document.getElementById('counts-summary').textContent =
-      `${doc.bullish_candidates.length} bullish · ${pullbackCandidates.length} pullback · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
-    renderBullish(doc.bullish_candidates);
-    renderPullback(pullbackCandidates);
+      `${doc.bullish_candidates.length + pullbackCandidates.length} bullish · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
+    renderBullish(doc.bullish_candidates, pullbackCandidates);
     renderBearish(doc.bearish_candidates);
     renderOpenPositions(doc.open_positions);
 
