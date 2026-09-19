@@ -295,6 +295,20 @@
   .structure-line .label { font-weight: 600; color: var(--ink); }
   .structure-line .detail { color: var(--ink-dim); font-size: 0.74rem; }
 
+  /* The options-alternative part of a bullish card's information bubble - separated from
+     the signal explanation above it by a dashed rule. */
+  .opt-alt {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+  }
+  .opt-alt .label .kind { color: var(--info); }
+  .opt-alt.none .label { color: var(--ink-dim); }
+  .opt-alt .legs { font-size: 0.78rem; font-weight: 500; }
+
   .pl-value { font-weight: 600; text-align: right; }
   .pl-value.pos { color: var(--bull); }
   .pl-value.neg { color: var(--bear); }
@@ -392,6 +406,52 @@
     return { cls: 'established', label: 'Established' };
   }
 
+  function fmtMoney0(n) {
+    return `$${Math.round(n).toLocaleString('en-US')}`;
+  }
+  function capFirst(s) {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  // The options-alternative half of a bullish card's information bubble (2026-09-19),
+  // from the generator's `option_alternative` object - see
+  // alpaca-scalp-bot/swing_option_alternatives.mjs in the private repo for the rule:
+  // IV Rank < 30 -> bull call debit spread, >= 50 -> bull put credit spread, in between
+  // (or if the spread is too illiquid / risks too much) -> shares. A spread's max loss is
+  // built in, so no stop is shown for it. Renders nothing for an older snapshot without one.
+  function optionAlternativeHtml(a) {
+    if (!a) return '';
+    if (a.recommended !== 'options') {
+      return `
+        <div class="opt-alt none">
+          <div class="label">Options alternative: none</div>
+          <div class="detail">${esc(a.reason)}</div>
+        </div>`;
+    }
+    const isCredit = a.structure === 'bull_put_credit_spread';
+    const name = isCredit ? 'Bull put credit spread' : 'Bull call debit spread';
+    const limit = a.max_risk_pct != null ? ` (the limit is ${a.max_risk_pct}% of the account)` : '';
+    let support = '';
+    if (a.short_strike_vs_support_pct != null && a.support_level != null) {
+      const pct = Math.abs(a.short_strike_vs_support_pct).toFixed(1);
+      support = ` The short strike sits ${pct}% ${a.short_strike_vs_support_pct <= 0 ? 'below' : 'above'} the $${a.support_level.toFixed(2)} support.`;
+    }
+    return `
+      <div class="opt-alt">
+        <div class="label"><span class="kind">Options alternative</span> · ${name}</div>
+        <div class="legs mono">${esc(capFirst(a.legs_label))} · exp ${esc(a.expiration)} (${Math.round(a.dte)} DTE)</div>
+        <div class="detail">${isCredit ? 'Credit' : 'Debit'} ≈ $${a.net_price.toFixed(2)} · max risk ${fmtMoney0(a.max_loss)} · max profit ${fmtMoney0(a.max_profit)} · breakeven $${a.breakeven.toFixed(2)}. No stop needed: the max loss is built in${limit}.</div>
+        <div class="detail">${esc(a.reason)}${esc(support)}</div>
+      </div>`;
+  }
+
+  // One bubble per card: the signal explanation, then the options alternative below it.
+  function bubbleHtml(c) {
+    const alt = optionAlternativeHtml(c.option_alternative);
+    if (!c.reasoning && !alt) return '';
+    return `<div class="structure-line">${c.reasoning ? `<div class="detail">${esc(c.reasoning)}</div>` : ''}${alt}</div>`;
+  }
+
   function phaseTransitionCardHtml(c) {
     const p = freshPill(c);
     return `
@@ -412,7 +472,7 @@
           <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
         </div>
-        ${c.reasoning ? `<div class="structure-line"><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
+        ${bubbleHtml(c)}
       </div>`;
   }
 
@@ -435,7 +495,7 @@
           <div class="meta-item"><div class="k">200d SMA</div><div class="v mono">${c.long_sma_value.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
         </div>
-        ${c.reasoning ? `<div class="structure-line"><div class="detail">${esc(c.reasoning)}</div></div>` : ''}
+        ${bubbleHtml(c)}
       </div>`;
   }
 
