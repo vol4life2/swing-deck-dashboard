@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T17:40:07.451Z",
+  "updated_at": "2026-09-19T17:54:06.727Z",
   "bullish_candidates": [
     {
       "symbol": "AAOI",
@@ -13,6 +13,7 @@
       "sma30": 115.91,
       "suggested_stop": 92.15,
       "iv_rank_pct": 46.6033738,
+      "iv_level_pct": 86.8,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($102.25) while still below the 30-day SMA ($115.91), an early and still-unconfirmed turn."
     },
     {
@@ -27,6 +28,7 @@
       "sma30": 476.79,
       "suggested_stop": 403.36,
       "iv_rank_pct": 31.0392639,
+      "iv_level_pct": 52.1,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($439.22) while still below the 30-day SMA ($476.79), an early and still-unconfirmed turn."
     },
     {
@@ -41,6 +43,7 @@
       "sma30": 259.62,
       "suggested_stop": 239.43,
       "iv_rank_pct": 19.7431245,
+      "iv_level_pct": 31.3,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($252.90) while still below the 30-day SMA ($259.62), an early and still-unconfirmed turn."
     },
     {
@@ -55,6 +58,7 @@
       "sma30": 85.36,
       "suggested_stop": 76.71,
       "iv_rank_pct": 39.1545086,
+      "iv_level_pct": 75.3,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $89.51 already above SMA $85.36), likely a gap past Phase 2."
     },
     {
@@ -69,6 +73,7 @@
       "sma30": 178.71,
       "suggested_stop": 170.47,
       "iv_rank_pct": 38.4069547,
+      "iv_level_pct": 46.3,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $181.03 already above SMA $178.71), likely a gap past Phase 2."
     },
     {
@@ -83,6 +88,7 @@
       "sma30": 72.25,
       "suggested_stop": 65.79,
       "iv_rank_pct": 29.240873,
+      "iv_level_pct": 47.7,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($71.50) while still below the 30-day SMA ($72.25), an early and still-unconfirmed turn."
     },
     {
@@ -97,6 +103,7 @@
       "sma30": 105.87,
       "suggested_stop": 99.69,
       "iv_rank_pct": 31.9116358,
+      "iv_level_pct": 65.7,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $112.44 already above SMA $105.87), likely a gap past Phase 2."
     },
     {
@@ -111,6 +118,7 @@
       "sma30": 41.86,
       "suggested_stop": 41.53,
       "iv_rank_pct": 11.3132226,
+      "iv_level_pct": 42.5,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $44.10 already above SMA $41.86), likely a gap past Phase 2."
     },
     {
@@ -125,6 +133,7 @@
       "sma30": 42.04,
       "suggested_stop": 40.16,
       "iv_rank_pct": 34.6207671,
+      "iv_level_pct": 88.1,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $43.52 already above SMA $42.04), likely a gap past Phase 2."
     },
     {
@@ -139,6 +148,7 @@
       "sma30": 10.84,
       "suggested_stop": 10.55,
       "iv_rank_pct": 10.5343043,
+      "iv_level_pct": 87.7,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $11.73 already above SMA $10.84), likely a gap past Phase 2."
     },
     {
@@ -153,6 +163,7 @@
       "sma30": 173.83,
       "suggested_stop": 157.12,
       "iv_rank_pct": 6.7389685,
+      "iv_level_pct": 25.8,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($165.80) while still below the 30-day SMA ($173.83), an early and still-unconfirmed turn."
     },
     {
@@ -167,6 +178,7 @@
       "sma30": 120.59,
       "suggested_stop": 120.88,
       "iv_rank_pct": 51.6489275,
+      "iv_level_pct": 76.6,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $135.00 already above SMA $120.59), likely a gap past Phase 2."
     },
     {
@@ -181,6 +193,7 @@
       "sma30": 949.59,
       "suggested_stop": 884.7,
       "iv_rank_pct": 35.5478374,
+      "iv_level_pct": 62.9,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $968.47 already above SMA $949.59), likely a gap past Phase 2."
     },
     {
@@ -195,6 +208,7 @@
       "sma30": 166.52,
       "suggested_stop": 161.32,
       "iv_rank_pct": 2.8212945,
+      "iv_level_pct": 62.1,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $179.93 already above SMA $166.52), likely a gap past Phase 2."
     },
     {
@@ -209,6 +223,7 @@
       "sma30": 1554.77,
       "suggested_stop": 1474.47,
       "iv_rank_pct": 36.4170491,
+      "iv_level_pct": 72.1,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $1631.04 already above SMA $1554.77), likely a gap past Phase 2."
     },
     {
@@ -223,6 +238,7 @@
       "sma30": 422.29,
       "suggested_stop": 404.41,
       "iv_rank_pct": 33.095430199999996,
+      "iv_level_pct": 34.5,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $425.58 already above SMA $422.29), likely a gap past Phase 2."
     },
     {
@@ -237,6 +253,7 @@
       "sma30": 456.95,
       "suggested_stop": 399.06,
       "iv_rank_pct": 9.294757200000001,
+      "iv_level_pct": 66.3,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($438.99) while still below the 30-day SMA ($456.95), an early and still-unconfirmed turn."
     }
   ],
@@ -252,6 +269,7 @@
       "long_sma_value": 50.67,
       "suggested_stop": 49.94,
       "iv_rank_pct": 9.26076,
+      "iv_level_pct": 31.3,
       "reasoning": "Pullback to support - closed at $52.42, testing its 10-day swing low ($50.96) while still $1.75 above its 200-day SMA ($50.67) - a classic buy-the-dip inside an established uptrend, not a breakdown."
     }
   ],
