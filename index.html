@@ -416,7 +416,7 @@
   // The options-alternative half of a bullish card's information bubble (2026-09-19),
   // from the generator's `option_alternative` object - see
   // alpaca-scalp-bot/swing_option_alternatives.mjs in the private repo for the rule:
-  // IV Rank < 30 -> offer a bull call debit spread, >= 50 -> a bull put credit spread, in
+  // IV Rank < 25 -> offer a bull call debit spread, >= 45 -> a bull put credit spread, in
   // between (or if the spread is too illiquid / risks too much) -> nothing offered. Shares
   // are always the bullish trade - this is only an alternative. A spread's max loss is
   // built in, so no stop is shown for it. Renders nothing for an older snapshot without one.
