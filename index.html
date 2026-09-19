@@ -274,6 +274,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 8px 6px;
   }
+  /* Bullish and pullback cards: ONE grid for all their cells, so every row shares the same columns
+     (IV Rank sits over SMA 30 / the 200d SMA, Abs. IV over Suggested stop). The first track never
+     shrinks below its widest content (the phase name) so it doesn't wrap on a phone; the other two
+     split the rest, and on a wide card all three are equal thirds. */
+  .meta-grid.aligned {
+    grid-template-columns: minmax(max-content, 1fr) 1fr 1fr;
+    row-gap: 10px;
+  }
   .meta-item { display: flex; flex-direction: column; gap: 2px; }
   .meta-item .k {
     font-size: 0.63rem;
@@ -408,6 +416,13 @@
     return pct != null ? pct.toFixed(1) + '%' : '—';
   }
 
+  // The 30-day implied move in dollars (spot x IV x sqrt(30/365), a single symmetric +/- figure),
+  // shown on EVERY card type (2026-09-19, user request; it was bearish-only before). A snapshot
+  // without the field shows a dash.
+  function moveDisplay(dollars) {
+    return dollars != null ? '±$' + dollars.toFixed(2) : '—';
+  }
+
   function freshPill(c) {
     if (c.phase === 2) return { cls: 'fresh', label: 'Fresh' };
     if (c.phase === 3) return c.fresh_breakout ? { cls: 'fresh', label: 'Fresh' } : { cls: 'established', label: 'Established' };
@@ -472,15 +487,14 @@
           </div>
           <div class="pill ${p.cls}">${p.label}</div>
         </div>
-        <div class="meta-grid" style="grid-template-columns: 2fr 1fr 1fr;">
+        <div class="meta-grid aligned">
           <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
           <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
-        </div>
-        <div class="meta-grid">
           <div class="meta-item"><div class="k">EMA 10</div><div class="v mono">${c.ema10.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">SMA 30</div><div class="v mono">${c.sma30.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
         ${bubbleHtml(c)}
       </div>`;
@@ -496,15 +510,14 @@
           </div>
           <div class="pill fresh">At support</div>
         </div>
-        <div class="meta-grid" style="grid-template-columns: 2fr 1fr 1fr;">
+        <div class="meta-grid aligned">
           <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
           <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
-        </div>
-        <div class="meta-grid">
           <div class="meta-item"><div class="k">Support (10d low)</div><div class="v mono">${c.support_level.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">200d SMA</div><div class="v mono">${c.long_sma_value.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
         ${bubbleHtml(c)}
       </div>`;
@@ -556,7 +569,7 @@
         <div class="meta-grid">
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono" style="${reliable ? '' : `color: var(--amber)`}">${ivRankDisplay(c.iv_rank_pct)}${reliable ? '' : ' ⚠'}</div></div>
           <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
-          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${move != null ? '±$' + move.toFixed(2) : '—'}</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(move)}</div></div>
         </div>`;
       return `
       <div class="card bearish">
@@ -606,6 +619,9 @@
           <div class="meta-item"><div class="k">Position</div><div class="v mono">${pos.qty} sh @ $${pos.entry_price.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Opened</div><div class="v">${esc(pos.opened_date)} (${pos.days_held}d)</div></div>
           <div class="meta-item"><div class="k">Stop</div><div class="v mono">${pos.stop_price != null ? '$' + pos.stop_price.toFixed(2) : '—'}</div></div>
+          <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(pos.iv_rank_pct)}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(pos.iv_level_pct)}</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(pos.implied_move_30d)}</div></div>
         </div>
         <div class="structure-line">
           <div class="label">${phaseLine}</div>
@@ -631,6 +647,8 @@
           <div class="meta-item"><div class="k">Opened</div><div class="v">${esc(pos.opened_date)} (${pos.days_held}d)</div></div>
           <div class="meta-item"><div class="k">Expires</div><div class="v">${fmtMonthDay(pos.expiration)} (${pos.dte} DTE)</div></div>
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(pos.iv_rank_pct)}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(pos.iv_level_pct)}</div></div>
+          <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(pos.implied_move_30d)}</div></div>
           <div class="meta-item"><div class="k">Mark</div><div class="v mono">$${pos.mark.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Trade price</div><div class="v mono">$${pos.trade_price.toFixed(2)}</div></div>
         </div>
