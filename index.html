@@ -125,11 +125,74 @@
   }
   .stale-banner.show { display: block; }
 
+  /* Page tabs. Each "page" (bullish / bearish / open) has its own URL fragment, so it
+     is bookmarkable and the browser's back button steps between them. The bar is
+     sticky so it stays reachable from the bottom of a long candidate list on a phone;
+     it paints the page ground so cards scrolling underneath don't show through. */
+  .tabs-bar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--ground);
+    padding: 8px 0;
+    margin-bottom: 16px;
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 6px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--ink-dim);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab:focus-visible { outline: 2px solid var(--info); outline-offset: 1px; }
+  .tab[aria-current="page"] { background: var(--surface); border-color: var(--line); color: var(--ink); }
+  .tab .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .tab.t-bullish .dot { background: var(--bull); }
+  .tab.t-bearish .dot { background: var(--bear); }
+  .tab.t-open .dot { background: var(--info); }
+  .tab .count {
+    min-width: 1.7em;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--neutral-soft);
+    color: var(--ink-dim);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .tab.t-bullish[aria-current="page"] .count { background: var(--bull-soft); color: var(--bull); }
+  .tab.t-bearish[aria-current="page"] .count { background: var(--bear-soft); color: var(--bear); }
+  .tab.t-open[aria-current="page"] .count { background: var(--info-soft); color: var(--info); }
+  .tab .lbl-long { display: none; }
+  @media (min-width: 480px) {
+    .tab .lbl-long { display: inline; }
+    .tab .lbl-short { display: none; }
+  }
+
   section { margin-bottom: 32px; }
   .section-head {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
+    gap: 4px 12px;
     margin-bottom: 12px;
   }
   .section-title {
@@ -138,6 +201,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
   }
   .section-title .dot { width: 8px; height: 8px; border-radius: 50%; }
   .section-title.bullish .dot { background: var(--bull); }
@@ -254,13 +318,21 @@
   </div>
   <div class="subline">
     <span>Last check: <strong id="updated-at">—</strong></span>
-    <span id="counts-summary">—</span>
   </div>
   <div class="preview-note">Read-only · candidates from the phase classifier + IV Rank, positions from Alpaca paper + a separate live account · no orders are ever placed from this page.</div>
   <div class="stale-banner" id="stale-banner">Data is over 30 hours old — the daily refresh may have missed its run.</div>
 </header>
 
-<section>
+<div id="tabs-top"></div>
+<div class="tabs-bar">
+  <nav class="tabs" aria-label="Swing Deck pages">
+    <a class="tab t-bullish" id="tab-bullish" href="#bullish"><span class="dot"></span>Bullish<span class="count mono" id="count-bullish">—</span></a>
+    <a class="tab t-bearish" id="tab-bearish" href="#bearish"><span class="dot"></span>Bearish<span class="count mono" id="count-bearish">—</span></a>
+    <a class="tab t-open" id="tab-open" href="#open"><span class="dot"></span><span class="lbl-short">Open</span><span class="lbl-long">Open positions</span><span class="count mono" id="count-open">—</span></a>
+  </nav>
+</div>
+
+<section id="view-bullish">
   <div class="section-head">
     <div class="section-title bullish"><span class="dot"></span>Bullish candidates</div>
     <div class="section-count">Phase 2/3 transition, or a support pullback in an uptrend</div>
@@ -268,7 +340,7 @@
   <div id="bullish-cards"></div>
 </section>
 
-<section>
+<section id="view-bearish" hidden>
   <div class="section-head">
     <div class="section-title bearish"><span class="dot"></span>Bearish candidates</div>
     <div class="section-count">Phase 4/1 transition today · structure by IV Rank</div>
@@ -276,7 +348,7 @@
   <div id="bearish-cards"></div>
 </section>
 
-<section>
+<section id="view-open" hidden>
   <div class="section-head">
     <div class="section-title open"><span class="dot"></span>Open positions</div>
     <div class="section-count" id="open-count">—</div>
@@ -514,8 +586,9 @@
     if (!doc) return;
     document.getElementById('updated-at').textContent = fmtTime(doc.updated_at);
     const pullbackCandidates = doc.pullback_candidates || [];
-    document.getElementById('counts-summary').textContent =
-      `${doc.bullish_candidates.length + pullbackCandidates.length} bullish · ${doc.bearish_candidates.length} bearish · ${doc.open_positions.length} open`;
+    document.getElementById('count-bullish').textContent = doc.bullish_candidates.length + pullbackCandidates.length;
+    document.getElementById('count-bearish').textContent = doc.bearish_candidates.length;
+    document.getElementById('count-open').textContent = doc.open_positions.length;
     renderBullish(doc.bullish_candidates, pullbackCandidates);
     renderBearish(doc.bearish_candidates);
     renderOpenPositions(doc.open_positions);
@@ -540,6 +613,38 @@
       // keep showing the last successful render rather than blanking the page
     }
   }
+
+  // Page routing by URL fragment: #bullish (the default), #bearish, #open. One fetch
+  // feeds all three pages and the tab counts, so switching is instant and never
+  // refetches. The section ids are "view-*", deliberately NOT the fragment names, so
+  // following a tab link doesn't trigger the browser's jump-to-anchor scroll.
+  const VIEWS = ['bullish', 'bearish', 'open'];
+  const VIEW_TITLES = { bullish: 'Bullish', bearish: 'Bearish', open: 'Open positions' };
+
+  function currentView() {
+    const name = location.hash.replace(/^#\/?/, '');
+    return VIEWS.includes(name) ? name : 'bullish';
+  }
+
+  function showView(fromNavigation) {
+    const view = currentView();
+    for (const name of VIEWS) {
+      document.getElementById(`view-${name}`).hidden = name !== view;
+      const tab = document.getElementById(`tab-${name}`);
+      if (name === view) tab.setAttribute('aria-current', 'page');
+      else tab.removeAttribute('aria-current');
+    }
+    document.title = `${VIEW_TITLES[view]} · Swing Deck`;
+    // After a tab tap from deep in a long list, land at the top of the new page (just
+    // under the header) rather than wherever the old page's scroll position happened to be.
+    if (fromNavigation) {
+      const top = document.getElementById('tabs-top').getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > top) window.scrollTo(0, top);
+    }
+  }
+
+  window.addEventListener('hashchange', () => showView(true));
+  showView(false);
 
   fetchAndRender();
   setInterval(fetchAndRender, 15 * 60 * 1000);
