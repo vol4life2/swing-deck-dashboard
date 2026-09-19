@@ -400,6 +400,14 @@
     return pct != null ? String(Math.round(pct)) : '—';
   }
 
+  // The absolute IV level (the annualized implied-volatility index - genuinely a percentage,
+  // unlike the rank), one decimal. Shown next to IV Rank on the bullish AND bearish cards
+  // (bullish added 2026-09-19, user request) so a rank can be read against how high or low
+  // the stock's IV actually is. Older snapshots without the field show a dash.
+  function ivLevelDisplay(pct) {
+    return pct != null ? pct.toFixed(1) + '%' : '—';
+  }
+
   function freshPill(c) {
     if (c.phase === 2) return { cls: 'fresh', label: 'Fresh' };
     if (c.phase === 3) return c.fresh_breakout ? { cls: 'fresh', label: 'Fresh' } : { cls: 'established', label: 'Established' };
@@ -464,9 +472,10 @@
           </div>
           <div class="pill ${p.cls}">${p.label}</div>
         </div>
-        <div class="meta-grid" style="grid-template-columns: 2fr 1fr;">
+        <div class="meta-grid" style="grid-template-columns: 2fr 1fr 1fr;">
           <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
         </div>
         <div class="meta-grid">
           <div class="meta-item"><div class="k">EMA 10</div><div class="v mono">${c.ema10.toFixed(2)}</div></div>
@@ -487,9 +496,10 @@
           </div>
           <div class="pill fresh">At support</div>
         </div>
-        <div class="meta-grid" style="grid-template-columns: 2fr 1fr;">
+        <div class="meta-grid" style="grid-template-columns: 2fr 1fr 1fr;">
           <div class="meta-item"><div class="k">Phase</div><div class="v">${c.phase} · ${esc(c.phase_label)}</div></div>
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono">${ivRankDisplay(c.iv_rank_pct)}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
         </div>
         <div class="meta-grid">
           <div class="meta-item"><div class="k">Support (10d low)</div><div class="v mono">${c.support_level.toFixed(2)}</div></div>
@@ -545,7 +555,7 @@
       const ivRow = `
         <div class="meta-grid">
           <div class="meta-item"><div class="k">IV Rank</div><div class="v mono" style="${reliable ? '' : `color: var(--amber)`}">${ivRankDisplay(c.iv_rank_pct)}${reliable ? '' : ' ⚠'}</div></div>
-          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${c.iv_level_pct != null ? c.iv_level_pct.toFixed(1) + '%' : '—'}</div></div>
+          <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(c.iv_level_pct)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${move != null ? '±$' + move.toFixed(2) : '—'}</div></div>
         </div>`;
       return `
