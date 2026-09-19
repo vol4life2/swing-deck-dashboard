@@ -1,8 +1,10 @@
 {
-  "updated_at": "2026-09-19T02:10:53.889Z",
+  "updated_at": "2026-09-19T17:40:07.451Z",
   "bullish_candidates": [
     {
       "symbol": "AAOI",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 105.205,
       "phase": 2,
       "phase_label": "early reversal",
@@ -15,6 +17,8 @@
     },
     {
       "symbol": "AMAT",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 444.66,
       "phase": 2,
       "phase_label": "early reversal",
@@ -27,6 +31,8 @@
     },
     {
       "symbol": "AMZN",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 253.7,
       "phase": 2,
       "phase_label": "early reversal",
@@ -39,6 +45,8 @@
     },
     {
       "symbol": "CRCL",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 91.76,
       "phase": 3,
       "phase_label": "uptrend",
@@ -51,6 +59,8 @@
     },
     {
       "symbol": "EWY",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 181.34,
       "phase": 3,
       "phase_label": "uptrend",
@@ -63,6 +73,8 @@
     },
     {
       "symbol": "FCX",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 71.545,
       "phase": 2,
       "phase_label": "early reversal",
@@ -75,6 +87,8 @@
     },
     {
       "symbol": "HOOD",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 119.83,
       "phase": 3,
       "phase_label": "uptrend",
@@ -87,6 +101,8 @@
     },
     {
       "symbol": "IBIT",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 46.01,
       "phase": 3,
       "phase_label": "uptrend",
@@ -99,6 +115,8 @@
     },
     {
       "symbol": "IREN",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 46.705,
       "phase": 3,
       "phase_label": "uptrend",
@@ -111,6 +129,8 @@
     },
     {
       "symbol": "MARA",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 13.24,
       "phase": 3,
       "phase_label": "uptrend",
@@ -123,6 +143,8 @@
     },
     {
       "symbol": "MMM",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 166.01,
       "phase": 2,
       "phase_label": "early reversal",
@@ -135,6 +157,8 @@
     },
     {
       "symbol": "MSTR",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 153.91,
       "phase": 3,
       "phase_label": "uptrend",
@@ -147,6 +171,8 @@
     },
     {
       "symbol": "MU",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 1015.53,
       "phase": 3,
       "phase_label": "uptrend",
@@ -159,6 +185,8 @@
     },
     {
       "symbol": "SKHY",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 187.68,
       "phase": 3,
       "phase_label": "uptrend",
@@ -171,6 +199,8 @@
     },
     {
       "symbol": "SNDK",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 1791.83,
       "phase": 3,
       "phase_label": "uptrend",
@@ -183,6 +213,8 @@
     },
     {
       "symbol": "TSM",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 433.52,
       "phase": 3,
       "phase_label": "uptrend",
@@ -195,6 +227,8 @@
     },
     {
       "symbol": "WDC",
+      "trigger": "phase_transition",
+      "signal_date": "2026-09-18",
       "close": 441.48,
       "phase": 2,
       "phase_label": "early reversal",
@@ -209,6 +243,8 @@
   "pullback_candidates": [
     {
       "symbol": "PYPL",
+      "trigger": "support_pullback",
+      "signal_date": "2026-09-18",
       "close": 52.42,
       "phase": 1,
       "phase_label": "downtrend",
@@ -229,12 +265,12 @@
       "iv_rank_pct": 5.1,
       "iv_level_pct": 54.9,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 48.51,
       "strikes_label": "290/300",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 5 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 5 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "ASTS",
@@ -245,12 +281,12 @@
       "iv_rank_pct": 9,
       "iv_level_pct": 73.6,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 12.34,
       "strikes_label": "50/55",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 9 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 9 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "IBM",
@@ -261,12 +297,28 @@
       "iv_rank_pct": 34.2,
       "iv_level_pct": 38.6,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 25.38,
       "strikes_label": "220/230",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 34 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 34 < threshold 45 - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "KR",
+      "close": 60.04,
+      "phase": 4,
+      "phase_label": "rollover warning",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 35.1,
+      "iv_level_pct": 25.2,
+      "iv_rank_reliable": true,
+      "trading_days_available": 274,
+      "implied_move_30d": 4.33,
+      "strikes_label": "50/57.5",
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 35 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "LMT",
@@ -277,12 +329,12 @@
       "iv_rank_pct": 28.8,
       "iv_level_pct": 27,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 41.3,
       "strikes_label": "520/530",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 29 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 29 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "PSKY",
@@ -293,12 +345,12 @@
       "iv_rank_pct": 10,
       "iv_level_pct": 57.7,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 1.69,
       "strikes_label": "9/10",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 10 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 10 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "RKLB",
@@ -309,12 +361,28 @@
       "iv_rank_pct": 11.5,
       "iv_level_pct": 68.5,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 12.69,
       "strikes_label": "55/60",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 11 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 11 < threshold 45 - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "TLT",
+      "close": 81.225,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 26.3,
+      "iv_level_pct": 12.2,
+      "iv_rank_reliable": true,
+      "trading_days_available": 274,
+      "implied_move_30d": 2.85,
+      "strikes_label": "71/81",
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 26 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "VST",
@@ -325,12 +393,12 @@
       "iv_rank_pct": 0,
       "iv_level_pct": 43.2,
       "iv_rank_reliable": true,
-      "trading_days_available": 275,
+      "trading_days_available": 274,
       "implied_move_30d": 17.41,
       "strikes_label": "130/140",
-      "expiration": "2026-10-16",
-      "dte": 27.7,
-      "reasoning": "IV Rank 0 < threshold 50 - buying premium is relatively cheap (long put vertical)"
+      "expiration": "2026-11-20",
+      "dte": 62.1,
+      "reasoning": "IV Rank 0 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     }
   ],
   "open_positions": [
@@ -388,7 +456,7 @@
       "qty": 6,
       "entry_price": 149.56,
       "opened_date": "Sep 17",
-      "days_held": 1,
+      "days_held": 2,
       "stop_price": 142.4,
       "phase": 3,
       "phase_label": "uptrend",
@@ -403,7 +471,7 @@
       "qty": 15,
       "entry_price": 61.97,
       "opened_date": "Sep 17",
-      "days_held": 1,
+      "days_held": 2,
       "stop_price": 59.27,
       "phase": 1,
       "phase_label": "downtrend",
@@ -417,9 +485,9 @@
       "pl_pct": -20,
       "position_label": "Long put vertical 77.5/87.5",
       "opened_date": "Sep 17",
-      "days_held": 1,
+      "days_held": 2,
       "expiration": "2026-10-16",
-      "dte": 28,
+      "dte": 27,
       "iv_rank_pct": 6.0939186,
       "mark": 1.12,
       "trade_price": 1.4,
