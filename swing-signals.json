@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T19:39:05.467Z",
+  "updated_at": "2026-09-21T13:46:25.851Z",
   "bullish_candidates": [
     {
       "symbol": "AAOI",
@@ -15,7 +15,26 @@
       "iv_rank_pct": 46.6033738,
       "iv_level_pct": 86.8,
       "implied_move_30d": 26.17,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($102.25) while still below the 30-day SMA ($115.91), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($102.25) while still below the 30-day SMA ($115.91), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 46.6,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "credit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_put_credit_spread",
+        "legs_label": "sell 95P / buy 90P",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 2.1,
+        "max_loss": 290,
+        "max_profit": 210,
+        "breakeven": 92.9,
+        "quote_width_pct": 85.7,
+        "reason": "The bull put credit spread (sell 95P / buy 90P) is too illiquid: its bid/ask is 85.7% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "AMAT",
@@ -31,7 +50,17 @@
       "iv_rank_pct": 31.0392639,
       "iv_level_pct": 52.1,
       "implied_move_30d": 66.42,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($439.22) while still below the 30-day SMA ($476.79), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($439.22) while still below the 30-day SMA ($476.79), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 31,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 31 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "AMZN",
@@ -47,7 +76,26 @@
       "iv_rank_pct": 19.7431245,
       "iv_level_pct": 31.3,
       "implied_move_30d": 22.75,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($252.90) while still below the 30-day SMA ($259.62), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($252.90) while still below the 30-day SMA ($259.62), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 19.7,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 265C / sell 275C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 3.48,
+        "max_loss": 348,
+        "max_profit": 652,
+        "breakeven": 268.48,
+        "quote_width_pct": 24.5,
+        "reason": "The bull call debit spread (buy 265C / sell 275C) is too illiquid: its bid/ask is 24.5% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "CRCL",
@@ -63,7 +111,17 @@
       "iv_rank_pct": 39.1545086,
       "iv_level_pct": 75.3,
       "implied_move_30d": 19.82,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $89.51 already above SMA $85.36), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $89.51 already above SMA $85.36), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 39.2,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 39 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "EWY",
@@ -79,7 +137,17 @@
       "iv_rank_pct": 38.4069547,
       "iv_level_pct": 46.3,
       "implied_move_30d": 24.06,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $181.03 already above SMA $178.71), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $181.03 already above SMA $178.71), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 38.4,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 38 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "FCX",
@@ -95,7 +163,17 @@
       "iv_rank_pct": 29.240873,
       "iv_level_pct": 47.7,
       "implied_move_30d": 9.79,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($71.50) while still below the 30-day SMA ($72.25), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($71.50) while still below the 30-day SMA ($72.25), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 29.2,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 29 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "HOOD",
@@ -111,7 +189,17 @@
       "iv_rank_pct": 31.9116358,
       "iv_level_pct": 65.7,
       "implied_move_30d": 22.56,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $112.44 already above SMA $105.87), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $112.44 already above SMA $105.87), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 31.9,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 32 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "IBIT",
@@ -127,7 +215,26 @@
       "iv_rank_pct": 11.3132226,
       "iv_level_pct": 42.5,
       "implied_move_30d": 5.61,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $44.10 already above SMA $41.86), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $44.10 already above SMA $41.86), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 11.3,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": true,
+        "blocked_by": null,
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 50C / sell 57C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 1.73,
+        "max_loss": 173,
+        "max_profit": 527,
+        "breakeven": 51.73,
+        "quote_width_pct": 2.3,
+        "reason": "IV Rank 11 < 25: premium is cheap, so a debit spread buys leveraged upside with defined risk."
+      }
     },
     {
       "symbol": "IREN",
@@ -143,7 +250,17 @@
       "iv_rank_pct": 34.6207671,
       "iv_level_pct": 88.1,
       "implied_move_30d": 11.8,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $43.52 already above SMA $42.04), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $43.52 already above SMA $42.04), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 34.6,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 35 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "MARA",
@@ -159,7 +276,26 @@
       "iv_rank_pct": 10.5343043,
       "iv_level_pct": 87.7,
       "implied_move_30d": 3.33,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $11.73 already above SMA $10.84), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $11.73 already above SMA $10.84), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 10.5,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 15C / sell 16C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 0.3,
+        "max_loss": 30,
+        "max_profit": 70,
+        "breakeven": 15.3,
+        "quote_width_pct": 16.9,
+        "reason": "The bull call debit spread (buy 15C / sell 16C) is too illiquid: its bid/ask is 16.9% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "MMM",
@@ -175,7 +311,26 @@
       "iv_rank_pct": 6.7389685,
       "iv_level_pct": 25.8,
       "implied_move_30d": 12.29,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($165.80) while still below the 30-day SMA ($173.83), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($165.80) while still below the 30-day SMA ($173.83), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 6.7,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 170C / sell 180C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 3.35,
+        "max_loss": 335,
+        "max_profit": 665,
+        "breakeven": 173.35,
+        "quote_width_pct": 80.6,
+        "reason": "The bull call debit spread (buy 170C / sell 180C) is too illiquid: its bid/ask is 80.6% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "MSTR",
@@ -191,7 +346,26 @@
       "iv_rank_pct": 51.6489275,
       "iv_level_pct": 76.6,
       "implied_move_30d": 33.81,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $135.00 already above SMA $120.59), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $135.00 already above SMA $120.59), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 51.6,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "credit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_put_credit_spread",
+        "legs_label": "sell 150P / buy 140P",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 3.7,
+        "max_loss": 630,
+        "max_profit": 370,
+        "breakeven": 146.3,
+        "quote_width_pct": 16.2,
+        "reason": "The bull put credit spread (sell 150P / buy 140P) is too illiquid: its bid/ask is 16.2% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "MU",
@@ -207,7 +381,17 @@
       "iv_rank_pct": 35.5478374,
       "iv_level_pct": 62.9,
       "implied_move_30d": 183.1,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $968.47 already above SMA $949.59), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $968.47 already above SMA $949.59), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 35.5,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 36 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "SKHY",
@@ -223,7 +407,26 @@
       "iv_rank_pct": 2.8212945,
       "iv_level_pct": 62.1,
       "implied_move_30d": 33.44,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $179.93 already above SMA $166.52), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $179.93 already above SMA $166.52), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 2.8,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 205C / sell 215C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 3.07,
+        "max_loss": 307,
+        "max_profit": 693,
+        "breakeven": 208.08,
+        "quote_width_pct": 37.4,
+        "reason": "The bull call debit spread (buy 205C / sell 215C) is too illiquid: its bid/ask is 37.4% of its mid (limit 10%)."
+      }
     },
     {
       "symbol": "SNDK",
@@ -239,7 +442,17 @@
       "iv_rank_pct": 36.4170491,
       "iv_level_pct": 72.1,
       "implied_move_30d": 370.22,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $1631.04 already above SMA $1554.77), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $1631.04 already above SMA $1554.77), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 36.4,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 36 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "TSM",
@@ -255,7 +468,17 @@
       "iv_rank_pct": 33.095430199999996,
       "iv_level_pct": 34.5,
       "implied_move_30d": 42.85,
-      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $425.58 already above SMA $422.29), likely a gap past Phase 2."
+      "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $425.58 already above SMA $422.29), likely a gap past Phase 2.",
+      "option_alternative": {
+        "iv_rank_pct": 33.1,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "neutral",
+        "options_offered": false,
+        "blocked_by": null,
+        "reason": "IV Rank 33 sits between 25 and 45: no volatility edge for options either way."
+      }
     },
     {
       "symbol": "WDC",
@@ -271,7 +494,26 @@
       "iv_rank_pct": 9.294757200000001,
       "iv_level_pct": 66.3,
       "implied_move_30d": 83.94,
-      "reasoning": "Early reversal - price closed back above its 10-day EMA ($438.99) while still below the 30-day SMA ($456.95), an early and still-unconfirmed turn."
+      "reasoning": "Early reversal - price closed back above its 10-day EMA ($438.99) while still below the 30-day SMA ($456.95), an early and still-unconfirmed turn.",
+      "option_alternative": {
+        "iv_rank_pct": 9.3,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 490C / sell 500C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 3.05,
+        "max_loss": 305,
+        "max_profit": 695,
+        "breakeven": 493.05,
+        "quote_width_pct": 203.3,
+        "reason": "The bull call debit spread (buy 490C / sell 500C) is too illiquid: its bid/ask is 203.3% of its mid (limit 10%)."
+      }
     }
   ],
   "pullback_candidates": [
@@ -288,7 +530,26 @@
       "iv_rank_pct": 9.26076,
       "iv_level_pct": 31.3,
       "implied_move_30d": 4.7,
-      "reasoning": "Pullback to support - closed at $52.42, testing its 10-day swing low ($50.96) while still $1.75 above its 200-day SMA ($50.67) - a classic buy-the-dip inside an established uptrend, not a breakdown."
+      "reasoning": "Pullback to support - closed at $52.42, testing its 10-day swing low ($50.96) while still $1.75 above its 200-day SMA ($50.67) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "option_alternative": {
+        "iv_rank_pct": 9.3,
+        "debit_below": 25,
+        "credit_at_or_above": 45,
+        "max_risk_pct": 1,
+        "zone": "debit",
+        "options_offered": false,
+        "blocked_by": "illiquid",
+        "structure": "bull_call_debit_spread",
+        "legs_label": "buy 55C / sell 62.5C",
+        "expiration": "2026-11-20",
+        "dte": 60.3,
+        "net_price": 1.69,
+        "max_loss": 169,
+        "max_profit": 582,
+        "breakeven": 56.69,
+        "quote_width_pct": 31.5,
+        "reason": "The bull call debit spread (buy 55C / sell 62.5C) is too illiquid: its bid/ask is 31.5% of its mid (limit 10%)."
+      }
     }
   ],
   "bearish_candidates": [
@@ -301,11 +562,11 @@
       "iv_rank_pct": 5.1,
       "iv_level_pct": 54.9,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 48.51,
-      "strikes_label": "290/300",
+      "strikes_label": "300/310",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 5 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -317,11 +578,11 @@
       "iv_rank_pct": 9,
       "iv_level_pct": 73.6,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 12.34,
-      "strikes_label": "50/55",
+      "strikes_label": "50/60",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 9 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -333,11 +594,11 @@
       "iv_rank_pct": 34.2,
       "iv_level_pct": 38.6,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 25.38,
       "strikes_label": "220/230",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 34 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -349,11 +610,11 @@
       "iv_rank_pct": 35.1,
       "iv_level_pct": 25.2,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 4.33,
-      "strikes_label": "50/57.5",
+      "strikes_label": "50/60",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 35 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -365,12 +626,28 @@
       "iv_rank_pct": 28.8,
       "iv_level_pct": 27,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 41.3,
       "strikes_label": "520/530",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 29 < threshold 45 - buying premium is relatively cheap (long put vertical)"
+    },
+    {
+      "symbol": "OKLO",
+      "close": 38.01,
+      "phase": 1,
+      "phase_label": "downtrend",
+      "structure": "long_put_vertical",
+      "iv_rank_pct": 28.5,
+      "iv_level_pct": 75.6,
+      "iv_rank_reliable": true,
+      "trading_days_available": 275,
+      "implied_move_30d": 8.24,
+      "strikes_label": "35/40",
+      "expiration": "2026-11-20",
+      "dte": 60.3,
+      "reasoning": "IV Rank 28 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
       "symbol": "PSKY",
@@ -381,11 +658,11 @@
       "iv_rank_pct": 10,
       "iv_level_pct": 57.7,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 1.69,
       "strikes_label": "9/10",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 10 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -397,11 +674,11 @@
       "iv_rank_pct": 11.5,
       "iv_level_pct": 68.5,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 12.69,
-      "strikes_label": "55/60",
+      "strikes_label": "60/65",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 11 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -413,11 +690,11 @@
       "iv_rank_pct": 26.3,
       "iv_level_pct": 12.2,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 2.85,
       "strikes_label": "71/81",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 26 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     },
     {
@@ -429,11 +706,11 @@
       "iv_rank_pct": 0,
       "iv_level_pct": 43.2,
       "iv_rank_reliable": true,
-      "trading_days_available": 274,
+      "trading_days_available": 275,
       "implied_move_30d": 17.41,
-      "strikes_label": "130/140",
+      "strikes_label": "125/135",
       "expiration": "2026-11-20",
-      "dte": 62.1,
+      "dte": 60.3,
       "reasoning": "IV Rank 0 < threshold 45 - buying premium is relatively cheap (long put vertical)"
     }
   ],
@@ -441,53 +718,53 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 336.13,
-      "pl_dollar": 10.59,
-      "pl_pct": 1.061,
+      "current_price": 333.755,
+      "pl_dollar": 3.465,
+      "pl_pct": 0.347,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
-      "days_held": 8,
+      "days_held": 10,
       "stop_price": 315.9,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 6.403925292814187,
+      "pct_above_stop": 5.652105096549547,
       "iv_rank_pct": 29.4543971,
       "iv_level_pct": 24.6,
-      "implied_move_30d": 23.7
+      "implied_move_30d": 23.53
     },
     {
       "kind": "shares",
       "symbol": "MDT",
-      "current_price": 92.13,
-      "pl_dollar": -17.479998,
-      "pl_pct": -1.043,
+      "current_price": 91.99,
+      "pl_dollar": -19.999998,
+      "pl_pct": -1.193,
       "qty": 18,
       "entry_price": 93.10111111111111,
       "opened_date": "Sep 15",
-      "days_held": 4,
+      "days_held": 6,
       "stop_price": 89.01,
       "phase": 5,
       "phase_label": "pullback",
-      "pct_above_stop": 3.505224132119975,
+      "pct_above_stop": 3.3479384338838214,
       "iv_rank_pct": 20.4407601,
       "iv_level_pct": 26.6,
-      "implied_move_30d": 7.02
+      "implied_move_30d": 7.01
     },
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.41,
-      "pl_dollar": -15.98,
-      "pl_pct": -1.6070000000000002,
+      "current_price": 10.36,
+      "pl_dollar": -20.68,
+      "pl_pct": -2.0789999999999997,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
-      "days_held": 4,
+      "days_held": 6,
       "stop_price": 9.98,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 4.308617234468935,
+      "pct_above_stop": 3.807615230460912,
       "iv_rank_pct": 0,
       "iv_level_pct": 42.7,
       "implied_move_30d": 1.27
@@ -495,57 +772,57 @@
     {
       "kind": "shares",
       "symbol": "GILD",
-      "current_price": 150.11,
-      "pl_dollar": 3.3,
-      "pl_pct": 0.368,
+      "current_price": 151.25,
+      "pl_dollar": 10.14,
+      "pl_pct": 1.13,
       "qty": 6,
       "entry_price": 149.56,
       "opened_date": "Sep 17",
-      "days_held": 2,
+      "days_held": 4,
       "stop_price": 142.4,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 5.414325842696634,
+      "pct_above_stop": 6.214887640449434,
       "iv_rank_pct": 11.2140626,
       "iv_level_pct": 27.6,
-      "implied_move_30d": 11.88
+      "implied_move_30d": 11.97
     },
     {
       "kind": "shares",
       "symbol": "MDLZ",
-      "current_price": 60.85,
-      "pl_dollar": -16.8,
-      "pl_pct": -1.807,
+      "current_price": 60.51,
+      "pl_dollar": -21.9,
+      "pl_pct": -2.3560000000000003,
       "qty": 15,
       "entry_price": 61.97,
       "opened_date": "Sep 17",
-      "days_held": 2,
+      "days_held": 4,
       "stop_price": 59.27,
       "phase": 1,
       "phase_label": "downtrend",
-      "pct_above_stop": 2.6657668297621027,
+      "pct_above_stop": 2.0921208031044287,
       "iv_rank_pct": 18.4905604,
       "iv_level_pct": 22,
-      "implied_move_30d": 3.83
+      "implied_move_30d": 3.81
     },
     {
       "kind": "options",
       "symbol": "KO",
-      "current_price": 88.21,
-      "pl_dollar": -28,
-      "pl_pct": -20,
+      "current_price": 87.67,
+      "pl_dollar": -13,
+      "pl_pct": -9.285714285714286,
       "position_label": "Long put vertical 77.5/87.5",
       "opened_date": "Sep 17",
-      "days_held": 2,
+      "days_held": 4,
       "expiration": "2026-10-16",
-      "dte": 27,
+      "dte": 25,
       "iv_rank_pct": 6.0939186,
       "iv_level_pct": 19.2,
-      "implied_move_30d": 4.85,
-      "mark": 1.12,
+      "implied_move_30d": 4.82,
+      "mark": 1.27,
       "trade_price": 1.4,
       "profit_target_pct": 50,
-      "target_detail": "Needs to rise to $2.10/spread to hit target - currently $1.12."
+      "target_detail": "Needs to rise to $2.10/spread to hit target - currently $1.27."
     }
   ]
 }
