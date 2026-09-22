@@ -611,12 +611,13 @@
         <div class="card-head">
           <div class="symbol-block">
             <div class="symbol">${esc(c.symbol)}</div>
-            <div class="price mono">$${c.close.toFixed(2)}</div>
+            ${candidatePriceHtml(c)}
           </div>
           <div class="pill ${pillCls}">Phase ${c.phase} · ${esc(c.phase_label)}</div>
         </div>
         ${ivRow}
         ${!reliable ? `<div class="structure-line"><div class="label" style="color: var(--amber)">⚠ IV Rank may be unreliable</div><div class="detail">Only ${c.trading_days_available} trading days of history (needs ~200) - this stock likely IPO'd recently, so the rank's 252-day lookback is truncated. The absolute IV level above is more trustworthy than the rank here.</div></div>` : ''}
+        ${intradayAlertHtml(c)}
         <div class="structure-line">
           <div class="label">${label}</div>
           <div class="detail">${detail}</div>
