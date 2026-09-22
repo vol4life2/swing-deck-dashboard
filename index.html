@@ -687,6 +687,7 @@
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(pos.implied_move_30d)}</div></div>
           <div class="meta-item"><div class="k">Mark</div><div class="v mono">$${pos.mark.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">Trade price</div><div class="v mono">$${pos.trade_price.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="k">Underlying @ entry</div><div class="v mono">${pos.entry_spot != null ? '$' + pos.entry_spot.toFixed(2) : '—'}</div></div>
         </div>
         ${pos.target_detail ? `
         <div class="structure-line">
