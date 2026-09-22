@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T17:57:47.422Z",
+  "updated_at": "2026-09-22T18:11:31.463Z",
   "bullish_candidates": [
     {
       "symbol": "AMGN",
@@ -14,8 +14,12 @@
       "suggested_stop": 367.13,
       "iv_rank_pct": 45.3947888,
       "iv_level_pct": 29.8,
-      "implied_move_30d": 34.38,
+      "implied_move_30d": 32.92,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($391.07) while still below the 30-day SMA ($415.51), an early and still-unconfirmed turn.",
+      "live_price": 408.985,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 45.4,
         "debit_below": 25,
@@ -28,12 +32,12 @@
         "legs_label": "sell 385P / buy 375P",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 2.8,
-        "max_loss": 720,
-        "max_profit": 280,
-        "breakeven": 382.2,
-        "quote_width_pct": 53.6,
-        "reason": "The bull put credit spread (sell 385P / buy 375P) is too illiquid: its bid/ask is 53.6% of its mid (limit 10%)."
+        "net_price": 2.75,
+        "max_loss": 725,
+        "max_profit": 275,
+        "breakeven": 382.25,
+        "quote_width_pct": 50.9,
+        "reason": "The bull put credit spread (sell 385P / buy 375P) is too illiquid: its bid/ask is 50.9% of its mid (limit 10%)."
       }
     },
     {
@@ -49,8 +53,12 @@
       "suggested_stop": 127.74,
       "iv_rank_pct": 42.2772211,
       "iv_level_pct": 33.9,
-      "implied_move_30d": 13.17,
+      "implied_move_30d": 13.14,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($134.70) while still below the 30-day SMA ($135.06), an early and still-unconfirmed turn.",
+      "live_price": 132.8675,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $134.70 10-day EMA intraday - this reversal may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 42.3,
         "debit_below": 25,
@@ -75,8 +83,12 @@
       "suggested_stop": 105.21,
       "iv_rank_pct": 32.2690543,
       "iv_level_pct": 30.7,
-      "implied_move_30d": 9.84,
+      "implied_move_30d": 9.82,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($110.01) while still below the 30-day SMA ($111.61), an early and still-unconfirmed turn.",
+      "live_price": 105.225,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $110.01 10-day EMA intraday - this reversal may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 32.3,
         "debit_below": 25,
@@ -101,8 +113,12 @@
       "suggested_stop": 36.12,
       "iv_rank_pct": 21.1136145,
       "iv_level_pct": 44.6,
-      "implied_move_30d": 4.94,
+      "implied_move_30d": 4.88,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $37.70 already above SMA $36.21), likely a gap past Phase 2.",
+      "live_price": 38.09,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 21.1,
         "debit_below": 25,
@@ -115,11 +131,11 @@
         "legs_label": "buy 40C / sell 45C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 1.38,
-        "max_loss": 138,
-        "max_profit": 363,
-        "breakeven": 41.38,
-        "quote_width_pct": 2.2,
+        "net_price": 1.39,
+        "max_loss": 139,
+        "max_profit": 361,
+        "breakeven": 41.39,
+        "quote_width_pct": 2.9,
         "reason": "IV Rank 21 < 25: premium is cheap, so a debit spread buys leveraged upside with defined risk."
       }
     },
@@ -138,6 +154,10 @@
       "iv_level_pct": 58.3,
       "implied_move_30d": 26.81,
       "reasoning": "Fresh breakout - the 10-day EMA just crossed above the 30-day SMA with price above both ($152.49 vs $154.47), the earliest confirmed uptrend read.",
+      "live_price": 160.7,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 39.8,
         "debit_below": 25,
@@ -164,6 +184,10 @@
       "iv_level_pct": 69.9,
       "implied_move_30d": 5.73,
       "reasoning": "Fresh breakout - the 10-day EMA just crossed above the 30-day SMA with price above both ($28.36 vs $29.27), the earliest confirmed uptrend read.",
+      "live_price": 31.22,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 12.6,
         "debit_below": 25,
@@ -176,12 +200,12 @@
         "legs_label": "buy 35C / sell 37C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 0.53,
-        "max_loss": 53,
-        "max_profit": 147,
+        "net_price": 0.52,
+        "max_loss": 52,
+        "max_profit": 148,
         "breakeven": 35.53,
-        "quote_width_pct": 49.1,
-        "reason": "The bull call debit spread (buy 35C / sell 37C) is too illiquid: its bid/ask is 49.1% of its mid (limit 10%)."
+        "quote_width_pct": 40,
+        "reason": "The bull call debit spread (buy 35C / sell 37C) is too illiquid: its bid/ask is 40% of its mid (limit 10%)."
       }
     },
     {
@@ -199,6 +223,10 @@
       "iv_level_pct": 26.8,
       "implied_move_30d": 39.55,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $497.10 already above SMA $495.79), likely a gap past Phase 2.",
+      "live_price": 496.96,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $497.10 10-day EMA intraday - this reversal may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 20.2,
         "debit_below": 25,
@@ -211,12 +239,12 @@
         "legs_label": "buy 510C / sell 520C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 3.93,
-        "max_loss": 393,
-        "max_profit": 607,
-        "breakeven": 513.92,
-        "quote_width_pct": 14,
-        "reason": "The bull call debit spread (buy 510C / sell 520C) is too illiquid: its bid/ask is 14% of its mid (limit 10%)."
+        "net_price": 3.88,
+        "max_loss": 388,
+        "max_profit": 613,
+        "breakeven": 513.88,
+        "quote_width_pct": 27.1,
+        "reason": "The bull call debit spread (buy 510C / sell 520C) is too illiquid: its bid/ask is 27.1% of its mid (limit 10%)."
       }
     },
     {
@@ -234,6 +262,10 @@
       "iv_level_pct": 51.5,
       "implied_move_30d": 28.77,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $182.32 already above SMA $170.12), likely a gap past Phase 2.",
+      "live_price": 195.788,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 44.8,
         "debit_below": 25,
@@ -260,6 +292,10 @@
       "iv_level_pct": 32.7,
       "implied_move_30d": 10.13,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($106.68) while still below the 30-day SMA ($108.86), an early and still-unconfirmed turn.",
+      "live_price": 101.2,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $106.68 10-day EMA intraday - this reversal may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 44.5,
         "debit_below": 25,
@@ -286,6 +322,10 @@
       "iv_level_pct": 52.5,
       "implied_move_30d": 21.31,
       "reasoning": "Early reversal - price closed back above its 10-day EMA ($133.27) while still below the 30-day SMA ($143.18), an early and still-unconfirmed turn.",
+      "live_price": 148.675,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 54.7,
         "debit_below": 25,
@@ -298,12 +338,12 @@
         "legs_label": "sell 135P / buy 125P",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 3.23,
-        "max_loss": 678,
-        "max_profit": 323,
-        "breakeven": 131.78,
-        "quote_width_pct": 17.1,
-        "reason": "The bull put credit spread (sell 135P / buy 125P) is too illiquid: its bid/ask is 17.1% of its mid (limit 10%)."
+        "net_price": 3.17,
+        "max_loss": 683,
+        "max_profit": 317,
+        "breakeven": 131.82,
+        "quote_width_pct": 14.2,
+        "reason": "The bull put credit spread (sell 135P / buy 125P) is too illiquid: its bid/ask is 14.2% of its mid (limit 10%)."
       }
     },
     {
@@ -319,8 +359,12 @@
       "suggested_stop": 27.19,
       "iv_rank_pct": 1.3792179,
       "iv_level_pct": 8.7,
-      "implied_move_30d": 0.87,
+      "implied_move_30d": 0.78,
       "reasoning": "Established uptrend - price moved directly into a confirmed uptrend today (EMA $28.60 already above SMA $28.27), likely a gap past Phase 2.",
+      "live_price": 30.805,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 1.4,
         "debit_below": 25,
@@ -348,8 +392,12 @@
       "suggested_stop": 22.11,
       "iv_rank_pct": 0.46982860000000004,
       "iv_level_pct": 37.5,
-      "implied_move_30d": 2.48,
+      "implied_move_30d": 2.46,
       "reasoning": "Pullback to support - closed at $22.93, testing its 10-day swing low ($22.73) while still $2.31 above its 200-day SMA ($20.61) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 23.705,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 0.5,
         "debit_below": 25,
@@ -362,12 +410,12 @@
         "legs_label": "buy 25C / sell 27.5C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 0.73,
-        "max_loss": 73,
-        "max_profit": 178,
-        "breakeven": 25.73,
-        "quote_width_pct": 34.5,
-        "reason": "The bull call debit spread (buy 25C / sell 27.5C) is too illiquid: its bid/ask is 34.5% of its mid (limit 10%)."
+        "net_price": 0.7,
+        "max_loss": 70,
+        "max_profit": 180,
+        "breakeven": 25.7,
+        "quote_width_pct": 42.9,
+        "reason": "The bull call debit spread (buy 25C / sell 27.5C) is too illiquid: its bid/ask is 42.9% of its mid (limit 10%)."
       }
     },
     {
@@ -384,6 +432,10 @@
       "iv_level_pct": 29.7,
       "implied_move_30d": 14.18,
       "reasoning": "Pullback to support - closed at $164.98, testing its 10-day swing low ($160.33) while still $4.33 above its 200-day SMA ($160.65) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 168.115,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 11.1,
         "debit_below": 25,
@@ -396,12 +448,12 @@
         "legs_label": "buy 170C / sell 180C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 3.82,
-        "max_loss": 382,
-        "max_profit": 618,
-        "breakeven": 173.83,
-        "quote_width_pct": 19.6,
-        "reason": "The bull call debit spread (buy 170C / sell 180C) is too illiquid: its bid/ask is 19.6% of its mid (limit 10%)."
+        "net_price": 3.97,
+        "max_loss": 397,
+        "max_profit": 603,
+        "breakeven": 173.98,
+        "quote_width_pct": 21.4,
+        "reason": "The bull call debit spread (buy 170C / sell 180C) is too illiquid: its bid/ask is 21.4% of its mid (limit 10%)."
       }
     },
     {
@@ -418,6 +470,10 @@
       "iv_level_pct": 76,
       "implied_move_30d": 2.48,
       "reasoning": "Pullback to support - closed at $11.38, testing its 10-day swing low ($11.13) while still $1.09 above its 200-day SMA ($10.29) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 11.25,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 4.9,
         "debit_below": 25,
@@ -445,6 +501,10 @@
       "iv_level_pct": 22,
       "implied_move_30d": 4.38,
       "reasoning": "Pullback to support - closed at $68.54, testing its 10-day swing low ($67.41) while still $1.62 above its 200-day SMA ($66.92) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 68.695,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 20.8,
         "debit_below": 25,
@@ -457,11 +517,11 @@
         "legs_label": "buy 70C / sell 80C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 2.21,
-        "max_loss": 221,
-        "max_profit": 780,
-        "breakeven": 72.21,
-        "quote_width_pct": 7.7,
+        "net_price": 2.15,
+        "max_loss": 215,
+        "max_profit": 785,
+        "breakeven": 72.15,
+        "quote_width_pct": 8.4,
         "reason": "IV Rank 21 < 25: premium is cheap, so a debit spread buys leveraged upside with defined risk."
       }
     },
@@ -479,6 +539,10 @@
       "iv_level_pct": 40.1,
       "implied_move_30d": 58.73,
       "reasoning": "Pullback to support - closed at $516.65, testing its 10-day swing low ($508.50) while still $12.53 above its 200-day SMA ($504.12) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 498.46,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $508.50 support level intraday - this pullback setup may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 32,
         "debit_below": 25,
@@ -504,6 +568,10 @@
       "iv_level_pct": 30.8,
       "implied_move_30d": 13.89,
       "reasoning": "Pullback to support - closed at $157.69, testing its 10-day swing low ($153.55) while still $31.71 above its 200-day SMA ($125.98) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 159.46,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": false,
+      "intraday_alert": null,
       "option_alternative": {
         "iv_rank_pct": 4.5,
         "debit_below": 25,
@@ -516,12 +584,12 @@
         "legs_label": "buy 165C / sell 175C",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 3.25,
-        "max_loss": 325,
-        "max_profit": 675,
-        "breakeven": 168.25,
-        "quote_width_pct": 21.5,
-        "reason": "The bull call debit spread (buy 165C / sell 175C) is too illiquid: its bid/ask is 21.5% of its mid (limit 10%)."
+        "net_price": 3.18,
+        "max_loss": 318,
+        "max_profit": 682,
+        "breakeven": 168.18,
+        "quote_width_pct": 26.8,
+        "reason": "The bull call debit spread (buy 165C / sell 175C) is too illiquid: its bid/ask is 26.8% of its mid (limit 10%)."
       }
     },
     {
@@ -536,8 +604,12 @@
       "suggested_stop": 46.48,
       "iv_rank_pct": 51.4080714,
       "iv_level_pct": 26.5,
-      "implied_move_30d": 3.58,
+      "implied_move_30d": 3.61,
       "reasoning": "Pullback to support - closed at $47.68, testing its 10-day swing low ($47.43) while still $1.52 above its 200-day SMA ($46.16) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
+      "live_price": 46.78,
+      "live_price_as_of": "2026-09-22T18:10:53.114Z",
+      "intraday_invalidated": true,
+      "intraday_alert": "Price has dropped back below its $47.43 support level intraday - this pullback setup may no longer hold. Re-check before entering.",
       "option_alternative": {
         "iv_rank_pct": 51.4,
         "debit_below": 25,
@@ -550,12 +622,12 @@
         "legs_label": "sell 44P / buy 38P",
         "expiration": "2026-11-20",
         "dte": 59.1,
-        "net_price": 0.77,
-        "max_loss": 524,
-        "max_profit": 77,
-        "breakeven": 43.24,
-        "quote_width_pct": 27.5,
-        "reason": "The bull put credit spread (sell 44P / buy 38P) is too illiquid: its bid/ask is 27.5% of its mid (limit 10%)."
+        "net_price": 0.78,
+        "max_loss": 522,
+        "max_profit": 78,
+        "breakeven": 43.22,
+        "quote_width_pct": 25.6,
+        "reason": "The bull put credit spread (sell 44P / buy 38P) is too illiquid: its bid/ask is 25.6% of its mid (limit 10%)."
       }
     }
   ],
@@ -566,11 +638,11 @@
       "phase": 1,
       "phase_label": "downtrend",
       "structure": "long_put_vertical",
-      "iv_rank_pct": 41,
-      "iv_level_pct": 22.9,
+      "iv_rank_pct": 41.3,
+      "iv_level_pct": 23,
       "iv_rank_reliable": true,
       "trading_days_available": 275,
-      "implied_move_30d": 26.13,
+      "implied_move_30d": 26.12,
       "strikes_label": "385/395",
       "expiration": "2026-11-20",
       "dte": 59.1,
@@ -581,9 +653,9 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 340.68,
-      "pl_dollar": 24.24,
-      "pl_pct": 2.429,
+      "current_price": 340.905,
+      "pl_dollar": 24.915,
+      "pl_pct": 2.497,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
@@ -591,17 +663,17 @@
       "stop_price": 317.55,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 7.283892300425128,
+      "pct_above_stop": 7.354747283892288,
       "iv_rank_pct": 28.377045699999996,
       "iv_level_pct": 24.4,
-      "implied_move_30d": 24.03
+      "implied_move_30d": 23.79
     },
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.7099,
-      "pl_dollar": 12.2106,
-      "pl_pct": 1.228,
+      "current_price": 10.6601,
+      "pl_dollar": 7.5294,
+      "pl_pct": 0.757,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
@@ -609,17 +681,17 @@
       "stop_price": 10,
       "phase": 5,
       "phase_label": "pullback",
-      "pct_above_stop": 7.098999999999993,
+      "pct_above_stop": 6.600999999999998,
       "iv_rank_pct": 0,
       "iv_level_pct": 42.8,
-      "implied_move_30d": 1.32
+      "implied_move_30d": 1.31
     },
     {
       "kind": "shares",
       "symbol": "GILD",
-      "current_price": 152.8,
-      "pl_dollar": 19.44,
-      "pl_pct": 2.166,
+      "current_price": 152.83,
+      "pl_dollar": 19.62,
+      "pl_pct": 2.186,
       "qty": 6,
       "entry_price": 149.56,
       "opened_date": "Sep 17",
@@ -627,7 +699,7 @@
       "stop_price": 142.98,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 6.868093439641923,
+      "pct_above_stop": 6.889075395160178,
       "iv_rank_pct": 12.2429099,
       "iv_level_pct": 28.2,
       "implied_move_30d": 12.37
@@ -635,9 +707,9 @@
     {
       "kind": "shares",
       "symbol": "MDLZ",
-      "current_price": 60.95,
-      "pl_dollar": -15.3,
-      "pl_pct": -1.646,
+      "current_price": 61.035,
+      "pl_dollar": -14.025,
+      "pl_pct": -1.509,
       "qty": 15,
       "entry_price": 61.97,
       "opened_date": "Sep 17",
@@ -645,17 +717,17 @@
       "stop_price": 59.27,
       "phase": 1,
       "phase_label": "downtrend",
-      "pct_above_stop": 2.8344862493673015,
+      "pct_above_stop": 2.977897756031708,
       "iv_rank_pct": 20.0600727,
       "iv_level_pct": 22.9,
-      "implied_move_30d": 4.1
+      "implied_move_30d": 4.11
     },
     {
       "kind": "options",
       "symbol": "KO",
-      "current_price": 88.43,
-      "pl_dollar": -38,
-      "pl_pct": -27.142857142857142,
+      "current_price": 88.53,
+      "pl_dollar": -40,
+      "pl_pct": -28.57142857142857,
       "position_label": "Long put vertical 77.5/87.5",
       "opened_date": "Sep 17",
       "days_held": 5,
@@ -664,10 +736,10 @@
       "iv_rank_pct": 6.1920737,
       "iv_level_pct": 19.3,
       "implied_move_30d": 4.93,
-      "mark": 1.02,
+      "mark": 1,
       "trade_price": 1.4,
       "profit_target_pct": 50,
-      "target_detail": "Needs to rise to $2.10/spread to hit target - currently $1.02."
+      "target_detail": "Needs to rise to $2.10/spread to hit target - currently $1.00."
     }
   ]
 }

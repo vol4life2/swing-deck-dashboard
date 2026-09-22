@@ -255,6 +255,11 @@
     font-size: 0.82rem;
     color: var(--ink-dim);
   }
+  .asof {
+    font-size: 0.68rem;
+    color: var(--ink-dim);
+    opacity: 0.75;
+  }
   .pill {
     font-size: 0.68rem;
     font-weight: 600;
@@ -423,6 +428,34 @@
     return dollars != null ? '±$' + dollars.toFixed(2) : '—';
   }
 
+  // Shared price block for a candidate card (bullish/pullback) - added after a real
+  // report: `close` (the signal's daily-bar close, possibly yesterday's) was shown
+  // alone, styled identically to the OPEN POSITION cards' genuinely live current_price,
+  // with no date - a stale close read as "the current price." Now the LIVE price (when
+  // the generator could fetch one) is what's shown big, with the close + its date as a
+  // dimmer sub-label - same live-primary/close-secondary convention open positions
+  // already use, just spelling out the close explicitly here since it's the one that
+  // decided the recommendation.
+  function candidatePriceHtml(c) {
+    const big = c.live_price != null ? c.live_price : c.close;
+    const asOf = c.live_price != null
+      ? `Close $${c.close.toFixed(2)} (${fmtMonthDay(c.signal_date)}) · now ${fmtTime(c.live_price_as_of)}`
+      : `Close $${c.close.toFixed(2)} (${fmtMonthDay(c.signal_date)}) · live price unavailable`;
+    return `
+      <div class="price mono">$${big.toFixed(2)}</div>
+      <div class="asof">${asOf}</div>`;
+  }
+
+  // Disclosed, never acted on - mirrors the IV-Rank-unreliable warning's own convention
+  // (flag it, don't hide the candidate or silently override the decision). Only appears
+  // when the generator found a live price AND that price has crossed back over the
+  // exact level the signal's own reasoning depended on (EMA10 for a phase transition,
+  // the support level for a pullback) - see generate_swing_snapshot.mjs for the check.
+  function intradayAlertHtml(c) {
+    if (!c.intraday_alert) return '';
+    return `<div class="structure-line"><div class="label" style="color: var(--amber)">⚠ May no longer hold</div><div class="detail">${esc(c.intraday_alert)}</div></div>`;
+  }
+
   function freshPill(c) {
     if (c.phase === 2) return { cls: 'fresh', label: 'Fresh' };
     if (c.phase === 3) return c.fresh_breakout ? { cls: 'fresh', label: 'Fresh' } : { cls: 'established', label: 'Established' };
@@ -483,7 +516,7 @@
         <div class="card-head">
           <div class="symbol-block">
             <div class="symbol">${esc(c.symbol)}</div>
-            <div class="price mono">$${c.close.toFixed(2)}</div>
+            ${candidatePriceHtml(c)}
           </div>
           <div class="pill ${p.cls}">${p.label}</div>
         </div>
@@ -496,6 +529,7 @@
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
+        ${intradayAlertHtml(c)}
         ${bubbleHtml(c)}
       </div>`;
   }
@@ -506,7 +540,7 @@
         <div class="card-head">
           <div class="symbol-block">
             <div class="symbol">${esc(c.symbol)}</div>
-            <div class="price mono">$${c.close.toFixed(2)}</div>
+            ${candidatePriceHtml(c)}
           </div>
           <div class="pill fresh">At support</div>
         </div>
@@ -519,6 +553,7 @@
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
+        ${intradayAlertHtml(c)}
         ${bubbleHtml(c)}
       </div>`;
   }
