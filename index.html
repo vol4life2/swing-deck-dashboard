@@ -296,6 +296,17 @@
   }
   .meta-item .v { font-size: 0.82rem; font-weight: 500; }
 
+  /* Tracking-only volume / price-structure badges (2026-09-23) - smaller, sentence-case pills. */
+  .track-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .track-row .k {
+    font-size: 0.63rem;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 2px;
+  }
+  .pill.sm { font-size: 0.66rem; padding: 3px 8px; text-transform: none; letter-spacing: 0; }
+
   .structure-line {
     font-size: 0.78rem;
     padding: 8px 10px;
@@ -509,6 +520,28 @@
     return `<div class="structure-line">${c.reasoning ? `<div class="detail">${esc(c.reasoning)}</div>` : ''}${alt}</div>`;
   }
 
+  // Volume + price-structure badges (2026-09-23) - TRACKING ONLY, not used by any entry or exit rule yet.
+  // Volume comes from the free IEX feed (a small slice of all trading), so read it as a relative signal.
+  function trackingBadgesHtml(c) {
+    const v = c.volume, s = c.structure;
+    const chips = [];
+    if (v && v.label) {
+      const cls = v.label === 'accumulation' ? 'bull' : v.label === 'distribution' ? 'bear' : 'established';
+      const ratio = v.ratio != null ? ` ${v.ratio.toFixed(2)}×` : '';
+      chips.push(`<span class="pill sm ${cls}" title="Average volume on up days ÷ down days, last ${v.lookback} days (IEX volume)">Vol: ${capFirst(v.label)}${ratio}</span>`);
+    }
+    if (v && v.obv_divergence === 'bearish') chips.push(`<span class="pill sm fresh" title="Price made a higher high that On-Balance Volume didn't confirm">⚠ OBV divergence</span>`);
+    if (v && v.obv_divergence === 'bullish') chips.push(`<span class="pill sm bull" title="Price made a lower low that On-Balance Volume didn't confirm">OBV bullish divergence</span>`);
+    if (s) {
+      const cls = s.code === 'uptrend' ? 'bull' : s.code === 'downtrend' ? 'bear' : 'established';
+      chips.push(`<span class="pill sm ${cls}" title="Last two swing highs ($${s.last_swing_high.toFixed(2)} latest) and swing lows ($${s.last_swing_low.toFixed(2)} latest)">${esc(s.label)}</span>`);
+      if (s.floor_broken) chips.push(`<span class="pill sm fresh" title="Closed below its latest swing low">⚠ Below swing low $${s.floor.toFixed(2)}</span>`);
+      else if (s.above_last_swing_high && s.code !== 'uptrend') chips.push(`<span class="pill sm bull" title="Closed above its latest swing high">Above swing high $${s.last_swing_high.toFixed(2)}</span>`);
+    }
+    if (chips.length === 0) return '';
+    return `<div class="track-row" title="Tracking only - not used in entry or exit decisions yet"><span class="k">Tracking</span>${chips.join('')}</div>`;
+  }
+
   function phaseTransitionCardHtml(c) {
     const p = freshPill(c);
     return `
@@ -529,6 +562,7 @@
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
+        ${trackingBadgesHtml(c)}
         ${intradayAlertHtml(c)}
         ${bubbleHtml(c)}
       </div>`;
@@ -553,6 +587,7 @@
           <div class="meta-item"><div class="k">Suggested stop</div><div class="v mono">${c.suggested_stop.toFixed(2)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(c.implied_move_30d)}</div></div>
         </div>
+        ${trackingBadgesHtml(c)}
         ${intradayAlertHtml(c)}
         ${bubbleHtml(c)}
       </div>`;
@@ -659,6 +694,7 @@
           <div class="meta-item"><div class="k">Abs. IV</div><div class="v mono">${ivLevelDisplay(pos.iv_level_pct)}</div></div>
           <div class="meta-item"><div class="k">30d move</div><div class="v mono">${moveDisplay(pos.implied_move_30d)}</div></div>
         </div>
+        ${trackingBadgesHtml(pos)}
         <div class="structure-line">
           <div class="label">${phaseLine}</div>
           <div class="detail">${shareDetail(pos)}</div>
