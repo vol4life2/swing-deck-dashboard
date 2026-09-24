@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T23:45:51.470Z",
+  "updated_at": "2026-09-24T00:04:39.947Z",
   "bullish_candidates": [],
   "pullback_candidates": [
     {
@@ -16,25 +16,26 @@
       "iv_level_pct": 32,
       "implied_move_30d": 22.9,
       "reasoning": "Pullback to support - closed at $249.38, testing its 10-day swing low ($244.31) while still $8.76 above its 200-day SMA ($240.62) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 248.0899,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 247.85,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.89,
+        "ratio": 1.057,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
         "label": "Lower highs & lows",
-        "floor": 244.315,
+        "floor": 244.3,
         "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 261.09,
-        "last_swing_low": 244.315
+        "last_swing_high": 261.12,
+        "last_swing_low": 244.3
       }
     },
     {
@@ -52,24 +53,25 @@
       "implied_move_30d": 12.14,
       "reasoning": "Pullback to support - closed at $149.50, testing its 10-day swing low ($148.94) while still $13.81 above its 200-day SMA ($135.69) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 149.51,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.859,
+        "ratio": 0.887,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "contracting",
         "label": "Lower high, higher low",
-        "floor": 159.42,
+        "floor": 159.41,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 164.99,
-        "last_swing_low": 159.42
+        "last_swing_high": 165.23,
+        "last_swing_low": 159.41
       }
     },
     {
@@ -86,25 +88,26 @@
       "iv_level_pct": 31,
       "implied_move_30d": 9.45,
       "reasoning": "Pullback to support - closed at $106.44, testing its 10-day swing low ($104.51) while still $9.74 above its 200-day SMA ($96.70) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 106.3,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 106.267,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.926,
+        "ratio": 0.86,
         "label": "neutral",
         "obv_trend": "falling",
-        "obv_divergence": "bullish",
-        "lookback": 20
+        "obv_divergence": null,
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "contracting",
         "label": "Lower high, higher low",
-        "floor": 107.57,
+        "floor": 107.55,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 112.205,
-        "last_swing_low": 107.57
+        "last_swing_high": 112.215,
+        "last_swing_low": 107.55
       }
     },
     {
@@ -121,25 +124,26 @@
       "iv_level_pct": 28.6,
       "implied_move_30d": 16.87,
       "reasoning": "Pullback to support - closed at $205.48, testing its 10-day swing low ($200.88) while still $20.79 above its 200-day SMA ($184.69) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 205.6,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 205.52,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.884,
-        "label": "neutral",
+        "ratio": 0.642,
+        "label": "distribution",
         "obv_trend": "falling",
         "obv_divergence": "bearish",
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "uptrend",
         "label": "Higher highs & lows",
-        "floor": 207.23,
+        "floor": 207.12,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 217.74,
-        "last_swing_low": 207.23
+        "last_swing_high": 217.78,
+        "last_swing_low": 207.12
       }
     },
     {
@@ -156,16 +160,17 @@
       "iv_level_pct": 42.7,
       "implied_move_30d": 4.58,
       "reasoning": "Pullback to support - closed at $37.39, testing its 10-day swing low ($36.85) while still $1.16 above its 200-day SMA ($36.23) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 37.3715,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 37.37,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 1.137,
+        "ratio": 1.167,
         "label": "neutral",
         "obv_trend": "rising",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "uptrend",
@@ -173,7 +178,7 @@
         "floor": 36.855,
         "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 39.09,
+        "last_swing_high": 39.1,
         "last_swing_low": 36.855
       }
     },
@@ -191,25 +196,26 @@
       "iv_level_pct": 27.4,
       "implied_move_30d": 26.51,
       "reasoning": "Pullback to support - closed at $337.75, testing its 10-day swing low ($337.36) while still $16.75 above its 200-day SMA ($321.00) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 338.01,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 337.9,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.946,
+        "ratio": 1.163,
         "label": "neutral",
-        "obv_trend": "falling",
+        "obv_trend": "rising",
         "obv_divergence": "bullish",
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
         "label": "Lower highs & lows",
-        "floor": 343.09,
+        "floor": 343.0717,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 360,
-        "last_swing_low": 343.09
+        "last_swing_high": 360.05,
+        "last_swing_low": 343.0717
       }
     },
     {
@@ -227,24 +233,25 @@
       "implied_move_30d": 20.08,
       "reasoning": "Pullback to support - closed at $198.44, testing its 10-day swing low ($198.25) while still $5.05 above its 200-day SMA ($193.39) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 198.696,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.828,
-        "label": "neutral",
+        "ratio": 0.729,
+        "label": "distribution",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "uptrend",
         "label": "Higher highs & lows",
-        "floor": 209.28,
+        "floor": 208.91,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 218.405,
-        "last_swing_low": 209.28
+        "last_swing_high": 218.505,
+        "last_swing_low": 208.91
       }
     },
     {
@@ -262,24 +269,25 @@
       "implied_move_30d": 9.28,
       "reasoning": "Pullback to support - closed at $99.48, testing its 10-day swing low ($99.31) while still $1.26 above its 200-day SMA ($98.22) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 99.5141,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.932,
+        "ratio": 1.021,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
         "label": "Lower highs & lows",
-        "floor": 106.4,
+        "floor": 106.34,
         "floor_broken": true,
         "above_last_swing_high": false,
         "last_swing_high": 109.56,
-        "last_swing_low": 106.4
+        "last_swing_low": 106.34
       }
     },
     {
@@ -297,24 +305,25 @@
       "implied_move_30d": 60.06,
       "reasoning": "Pullback to support - closed at $510.48, testing its 10-day swing low ($495.80) while still $6.89 above its 200-day SMA ($503.59) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 510.5,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 1.073,
+        "ratio": 0.958,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
         "label": "Lower highs & lows",
-        "floor": 512.505,
-        "floor_broken": true,
+        "floor": 507.83,
+        "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 564.225,
-        "last_swing_low": 512.505
+        "last_swing_high": 564.89,
+        "last_swing_low": 507.83
       }
     },
     {
@@ -332,15 +341,16 @@
       "implied_move_30d": 13.81,
       "reasoning": "Pullback to support - closed at $156.29, testing its 10-day swing low ($153.55) while still $29.64 above its 200-day SMA ($126.65) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 156.87,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 1.114,
+        "ratio": 0.941,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
@@ -348,7 +358,7 @@
         "floor": 153.55,
         "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 165.61,
+        "last_swing_high": 165.65,
         "last_swing_low": 153.55
       }
     },
@@ -367,24 +377,25 @@
       "implied_move_30d": 22.93,
       "reasoning": "Pullback to support - closed at $361.44, testing its 10-day swing low ($359.89) while still $24.96 above its 200-day SMA ($336.49) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
       "live_price": 361.547,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.844,
-        "label": "neutral",
+        "ratio": 0.753,
+        "label": "distribution",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
         "label": "Lower highs & lows",
-        "floor": 365.54,
+        "floor": 365.52,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 377.12,
-        "last_swing_low": 365.54
+        "last_swing_high": 377.17,
+        "last_swing_low": 365.52
       }
     },
     {
@@ -401,25 +412,26 @@
       "iv_level_pct": 26.7,
       "implied_move_30d": 3.56,
       "reasoning": "Pullback to support - closed at $46.53, testing its 10-day swing low ($46.17) while still $0.31 above its 200-day SMA ($46.22) - a classic buy-the-dip inside an established uptrend, not a breakdown.",
-      "live_price": 46.632,
-      "live_price_as_of": "2026-09-23T23:45:50.840Z",
+      "live_price": 46.6108,
+      "live_price_as_of": "2026-09-24T00:04:12.572Z",
       "intraday_invalidated": false,
       "intraday_alert": null,
       "volume": {
-        "ratio": 0.755,
+        "ratio": 0.752,
         "label": "distribution",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "expanding",
         "label": "Higher high, lower low",
-        "floor": 48.825,
+        "floor": 48.82,
         "floor_broken": true,
         "above_last_swing_high": false,
-        "last_swing_high": 51.655,
-        "last_swing_low": 48.825
+        "last_swing_high": 51.665,
+        "last_swing_low": 48.82
       }
     }
   ],
@@ -442,8 +454,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 9 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 60.14,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 60.3296,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -465,8 +477,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 22 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 355.67,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 355.3199,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -488,8 +500,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 40 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 392.9,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 392.88,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -511,8 +523,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 32 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 335.81,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 335.9174,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -534,31 +546,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 33 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 338.92,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
-      "intraday_invalidated": false,
-      "intraday_alert": null
-    },
-    {
-      "symbol": "JOBY",
-      "signal_date": "2026-09-23",
-      "close": 6.265,
-      "phase": 1,
-      "phase_label": "downtrend",
-      "ema10": 6.360065307607458,
-      "sma30": 6.936666666666665,
-      "structure": "long_put_vertical",
-      "iv_rank_pct": 0,
-      "iv_level_pct": 63.7,
-      "iv_rank_reliable": true,
-      "trading_days_available": 275,
-      "implied_move_30d": 1.14,
-      "strikes_label": "5/6",
-      "expiration": "2026-11-20",
-      "dte": 57.9,
-      "reasoning": "IV Rank 0 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 6.25,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 339.0488,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -581,7 +570,7 @@
       "dte": 57.9,
       "reasoning": "IV Rank 40 < threshold 45 - buying premium is relatively cheap (long put vertical)",
       "live_price": 57.64,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -604,7 +593,7 @@
       "dte": 57.9,
       "reasoning": "IV Rank 32 < threshold 45 - buying premium is relatively cheap (long put vertical)",
       "live_price": 191.36,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -626,8 +615,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 0 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 7.4027,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 7.43,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -649,8 +638,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 24 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 144.4,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 144.3301,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -672,8 +661,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 0 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 16.89,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 16.85,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -695,8 +684,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 32 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 58.09,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 58.16,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -718,8 +707,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 38 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 80.48,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 80.5466,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     },
@@ -741,8 +730,8 @@
       "expiration": "2026-11-20",
       "dte": 57.9,
       "reasoning": "IV Rank 7 < threshold 45 - buying premium is relatively cheap (long put vertical)",
-      "live_price": 249.3598,
-      "live_price_as_of": "2026-09-23T23:45:51.102Z",
+      "live_price": 249.02,
+      "live_price_as_of": "2026-09-24T00:04:39.785Z",
       "intraday_invalidated": false,
       "intraday_alert": null
     }
@@ -751,9 +740,9 @@
     {
       "kind": "shares",
       "symbol": "AAPL",
-      "current_price": 336.94,
-      "pl_dollar": 13.02,
-      "pl_pct": 1.3050000000000002,
+      "current_price": 336.86,
+      "pl_dollar": 12.75,
+      "pl_pct": 1.278,
       "qty": 3,
       "entry_price": 332.6,
       "opened_date": "Sep 11",
@@ -761,33 +750,34 @@
       "stop_price": 323.5,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 4.1545595054095825,
+      "pct_above_stop": 4.129829984544053,
       "iv_rank_pct": 28.711722499999997,
       "iv_level_pct": 24.4,
-      "implied_move_30d": 23.61,
+      "implied_move_30d": 23.6,
       "volume": {
-        "ratio": 0.963,
+        "ratio": 0.919,
         "label": "neutral",
         "obv_trend": "rising",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "uptrend",
         "label": "Higher highs & lows",
-        "floor": 309.92,
+        "floor": 309.9,
         "floor_broken": false,
         "above_last_swing_high": true,
-        "last_swing_high": 336.21,
-        "last_swing_low": 309.92
+        "last_swing_high": 336.22,
+        "last_swing_low": 309.9
       }
     },
     {
       "kind": "shares",
       "symbol": "UNG",
-      "current_price": 10.9,
-      "pl_dollar": 30.08,
-      "pl_pct": 3.025,
+      "current_price": 10.87,
+      "pl_dollar": 31.02,
+      "pl_pct": 3.1189999999999998,
       "qty": 94,
       "entry_price": 10.58,
       "opened_date": "Sep 15",
@@ -795,16 +785,17 @@
       "stop_price": 10.06,
       "phase": 3,
       "phase_label": "uptrend",
-      "pct_above_stop": 8.34990059642147,
+      "pct_above_stop": 8.051689860834976,
       "iv_rank_pct": 0,
       "iv_level_pct": 44.2,
       "implied_move_30d": 1.38,
       "volume": {
-        "ratio": 1.46,
+        "ratio": 1.206,
         "label": "accumulation",
         "obv_trend": "rising",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "downtrend",
@@ -834,20 +825,21 @@
       "iv_level_pct": 27.3,
       "implied_move_30d": 11.87,
       "volume": {
-        "ratio": 1.008,
+        "ratio": 0.848,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": "bearish",
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "expanding",
         "label": "Higher high, lower low",
-        "floor": 142.99,
+        "floor": 142.94,
         "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 152.435,
-        "last_swing_low": 142.99
+        "last_swing_high": 152.55,
+        "last_swing_low": 142.94
       }
     },
     {
@@ -868,26 +860,27 @@
       "iv_level_pct": 22.9,
       "implied_move_30d": 4.04,
       "volume": {
-        "ratio": 0.993,
+        "ratio": 0.963,
         "label": "neutral",
         "obv_trend": "falling",
         "obv_divergence": null,
-        "lookback": 20
+        "lookback": 20,
+        "feed": "tastytrade"
       },
       "structure": {
         "code": "expanding",
         "label": "Higher high, lower low",
-        "floor": 60.48,
+        "floor": 60.465,
         "floor_broken": false,
         "above_last_swing_high": false,
-        "last_swing_high": 63.74,
-        "last_swing_low": 60.48
+        "last_swing_high": 63.83,
+        "last_swing_low": 60.465
       }
     },
     {
       "kind": "options",
       "symbol": "KO",
-      "current_price": 88.12,
+      "current_price": 88.13,
       "pl_dollar": -27,
       "pl_pct": -19.28571428571429,
       "position_label": "Long put vertical 77.5/87.5",

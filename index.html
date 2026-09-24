@@ -521,14 +521,15 @@
   }
 
   // Volume + price-structure badges (2026-09-23) - TRACKING ONLY, not used by any entry or exit rule yet.
-  // Volume comes from the free IEX feed (a small slice of all trading), so read it as a relative signal.
+  // Computed from tastytrade's daily candles (consolidated volume); v.feed === 'iex' marks a fallback.
   function trackingBadgesHtml(c) {
     const v = c.volume, s = c.structure;
     const chips = [];
     if (v && v.label) {
       const cls = v.label === 'accumulation' ? 'bull' : v.label === 'distribution' ? 'bear' : 'established';
       const ratio = v.ratio != null ? ` ${v.ratio.toFixed(2)}×` : '';
-      chips.push(`<span class="pill sm ${cls}" title="Average volume on up days ÷ down days, last ${v.lookback} days (IEX volume)">Vol: ${capFirst(v.label)}${ratio}</span>`);
+      const src = v.feed === 'iex' ? 'IEX-only volume - tastytrade data was unavailable' : 'consolidated volume, tastytrade';
+      chips.push(`<span class="pill sm ${cls}" title="Average volume on up days ÷ down days, last ${v.lookback} days (${src})">Vol: ${capFirst(v.label)}${ratio}</span>`);
     }
     if (v && v.obv_divergence === 'bearish') chips.push(`<span class="pill sm fresh" title="Price made a higher high that On-Balance Volume didn't confirm">⚠ OBV divergence</span>`);
     if (v && v.obv_divergence === 'bullish') chips.push(`<span class="pill sm bull" title="Price made a lower low that On-Balance Volume didn't confirm">OBV bullish divergence</span>`);
