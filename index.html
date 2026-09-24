@@ -522,6 +522,7 @@
 
   // Volume + price-structure badges (2026-09-23) - TRACKING ONLY, not used by any entry or exit rule yet.
   // Computed from tastytrade's daily candles (consolidated volume); v.feed === 'iex' marks a fallback.
+  // ADX/RSI badges (c.trend) added the same night, also tracking only.
   function trackingBadgesHtml(c) {
     const v = c.volume, s = c.structure;
     const chips = [];
@@ -539,6 +540,19 @@
       if (s.floor_broken) chips.push(`<span class="pill sm fresh" title="Closed below its latest swing low">⚠ Below swing low $${s.floor.toFixed(2)}</span>`);
       else if (s.above_last_swing_high && s.code !== 'uptrend') chips.push(`<span class="pill sm bull" title="Closed above its latest swing high">Above swing high $${s.last_swing_high.toFixed(2)}</span>`);
     }
+    // ADX / RSI (same night) - shown only when they say something: ADX < 20 choppy, ADX > 25 strong (direction
+    // from +DI vs -DI, so it can be a strong DOWNtrend), RSI < 40 as a warning. 20-25 and 40-80 stay silent.
+    const tr = c.trend;
+    if (tr && tr.adx != null) {
+      if (tr.adx_label === 'choppy') {
+        chips.push(`<span class="pill sm established" title="ADX(14) below 20 - directionless or choppy; moving-average signals whipsaw more">Choppy · ADX ${Math.round(tr.adx)}</span>`);
+      } else if (tr.adx_label === 'strong') {
+        const cls = tr.direction === 'up' ? 'bull' : tr.direction === 'down' ? 'bear' : 'established';
+        const word = tr.direction === 'up' ? 'Strong uptrend' : tr.direction === 'down' ? 'Strong downtrend' : 'Strong trend';
+        chips.push(`<span class="pill sm ${cls}" title="ADX(14) above 25 - a strong trend; direction from +DI vs -DI">${word} · ADX ${Math.round(tr.adx)}</span>`);
+      }
+    }
+    if (tr && tr.rsi_zone === 'below_floor') chips.push(`<span class="pill sm fresh" title="RSI(14) below 40 - pullbacks in a healthy uptrend usually hold 40">⚠ RSI ${Math.round(tr.rsi)}</span>`);
     if (chips.length === 0) return '';
     return `<div class="track-row" title="Tracking only - not used in entry or exit decisions yet"><span class="k">Tracking</span>${chips.join('')}</div>`;
   }
